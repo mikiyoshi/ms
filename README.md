@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+#
+[WPGraphQLとREST APIを使ってWordPressをヘッドレス化する方法](https://kinsta.com/jp/blog/wpgraphql-vs-wp-rest-api/)
+[WordPress WP REST APIで投稿データを取得してReactで表示する](https://note.com/armada3524/n/n1bb6b51373f0)
