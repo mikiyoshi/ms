@@ -1,35 +1,52 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./App.css";
+import Blog from "./components/Blog";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import Service from "./pages/Service";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import Careers from "./pages/Careers";
 
-const App = () => {
-	const [data, setData] = useState([]);
-	useEffect(() => {
+export default function App() {
+	const [posts, setPosts] = useState([]);
+
+	const fetchPosts = () => {
 		axios
 			.get("//mindfulseeds.torontosharehouse.com/wp/wp-json/wp/v2/posts")
-			.then((response) => setData(response.data))
-			.catch((error) => console.log(error));
-	}, []);
-	return (
-		<>
-			{data.map((item, index) => (
-				<li key={index}>
-					<a href={item.link}>
-						<date>{item.date}</date>
-						<p>{item.guid.rendered}</p>
-						<p>{item.slug}</p>
-						<p>{item.link}</p>
-						<p>{item.title.rendered}</p>
-						<p>{item.content.rendered}</p>
-						<div dangerouslySetInnerHTML={{ __html: item.content.rendered }} />
-						<p>{item.excerpt.rendered}</p>
-						<p>{item.author}</p>
-						<p>{item.featured_media}</p>
-					</a>
-				</li>
-			))}
-		</>
-	);
-};
+			.then((res) => {
+				setPosts(res.data);
+			});
+	};
 
-export default App;
+	useEffect(() => {
+		fetchPosts();
+	}, []);
+
+	return (
+		<div>
+			<p className="text-7xl text-blue-700">Hello</p>
+			{posts.map((item) => (
+				<Home post={item} />
+			))}
+			{posts.map((item) => (
+				<Services post={item} />
+			))}
+			{posts.map((item) => (
+				<Service key={item.id} post={item} />
+			))}
+			{posts.map((item) => (
+				<AboutUs post={item} />
+			))}
+			{posts.map((item) => (
+				<ContactUs post={item} />
+			))}
+			{posts.map((item) => (
+				<Careers post={item} />
+			))}
+			{posts.map((item) => (
+				<Blog post={item} />
+			))}
+		</div>
+	);
+}
