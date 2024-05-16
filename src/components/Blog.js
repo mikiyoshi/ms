@@ -11,9 +11,9 @@ export default function Blog({ post }) {
 		});
 	};
 
-	// useEffect(() => {
-	// 	getImage();
-	// }, []);
+	useEffect(() => {
+		getImage();
+	}, []);
 
 	return (
 		<div class="container">

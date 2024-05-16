@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Blog from "./components/Blog";
 
 export default function App() {
 	const [posts, setPosts] = useState([]);
@@ -19,9 +18,7 @@ export default function App() {
 
 	return (
 		<div>
-			{posts.map((item) => (
-				<Blog post={item} />
-			))}
+			<p className="text-7xl text-blue-700">Hello</p>
 		</div>
 	);
 }
