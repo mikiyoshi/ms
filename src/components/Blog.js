@@ -6,9 +6,12 @@ export default function Blog({ post }) {
 	const [featuredImage, setFeaturedimage] = useState();
 
 	const getImage = () => {
-		axios.get(post?._links["wp:featuredmedia"][0]?.href).then((response) => {
-			setFeaturedimage(response.data.source_url);
-		});
+		axios
+			.get(post?._links["wp:featuredmedia"][0]?.href)
+			.then((response) => {
+				setFeaturedimage(response.data.source_url);
+			})
+			.catch((error) => console.log(error));
 	};
 
 	useEffect(() => {
