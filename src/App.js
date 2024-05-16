@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Blog from "./components/Blog";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import Service from "./pages/Service";
-import AboutUs from "./pages/AboutUs";
-import ContactUs from "./pages/ContactUs";
-import Careers from "./pages/Careers";
 
 export default function App() {
 	const [posts, setPosts] = useState([]);
