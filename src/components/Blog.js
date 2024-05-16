@@ -5,18 +5,18 @@ import "./blog.css";
 export default function Blog({ post }) {
 	const [featuredImage, setFeaturedimage] = useState();
 
-	const getImage = () => {
+	const getImage = useCallback(() => {
 		axios
 			.get(post?._links["wp:featuredmedia"][0]?.href)
 			.then((response) => {
 				setFeaturedimage(response.data.source_url);
 			})
 			.catch((error) => console.log(error));
-	};
+	}, [post]); // post が変更された場合にのみ getImage を再生成
 
 	useEffect(() => {
 		getImage();
-	}, []);
+	}, [getImage]);
 
 	return (
 		<div class="container">
