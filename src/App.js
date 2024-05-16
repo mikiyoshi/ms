@@ -28,6 +28,24 @@ export default function App() {
 			{posts.map((item) => (
 				<Home post={item} />
 			))}
+			{posts.map((item) => (
+				<Services post={item} />
+			))}
+			{posts.map((item) => (
+				<Service key={item.id} post={item} />
+			))}
+			{posts.map((item) => (
+				<AboutUs post={item} />
+			))}
+			{posts.map((item) => (
+				<ContactUs post={item} />
+			))}
+			{posts.map((item) => (
+				<Careers post={item} />
+			))}
+			{posts.map((item) => (
+				<Blog post={item} />
+			))}
 		</div>
 	);
 }
