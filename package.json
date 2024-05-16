@@ -16,8 +16,8 @@
     "start": "npx concurrently \"npm run start:react\" \"npm run start:dev\"",
     "start:react": "react-scripts start",
     "start:dev": "TAILWIND_MODE=watch postcss ./src/index.css -o ./src/dist.css -w",
-    "build": "npx concurrently \"npm run build:tailwindcss\" \"npm run build:react\"",
-    "build:react": "react-scripts build",
+    "build:react": "npx concurrently \"npm run build:tailwindcss\" \"npm run build:react\"",
+    "build": "react-scripts build",
     "build:tailwindcss": "NODE_ENV=production postcss styles.css -o dist.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
