@@ -4,12 +4,19 @@ import "./App.css";
 import Blog from "./components/Blog";
 
 const App = () => {
-	const [data, setData] = useState([]);
-	useEffect(() => {
+	const [posts, setPosts] = useState([]);
+
+	const fetchPosts = () => {
 		axios
 			.get("//mindfulseeds.torontosharehouse.com/wp/wp-json/wp/v2/posts")
-			.then((response) => setData(response.data))
+			.then((res) => {
+				setPosts(res.data);
+			})
 			.catch((error) => console.log(error));
+	};
+
+	useEffect(() => {
+		fetchPosts();
 	}, []);
 	return (
 		<>
