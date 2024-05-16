@@ -12,6 +12,7 @@ const App = () => {
 	}, []);
 	return (
 		<>
+			<p className="text-7xl text-blue-700">Hello</p>
 			{data.map((item, index) => (
 				<li key={index}>
 					<a href={item.link}>
