@@ -25,7 +25,6 @@ export default function App() {
 
 	return (
 		<div>
-			<p className="text-7xl text-blue-700">Hello</p>
 			{posts.map((item) => (
 				<Home post={item} />
 			))}
