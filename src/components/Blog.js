@@ -30,7 +30,7 @@ export default function Blog({ post }) {
 					className="blog-excerpt"
 					dangerouslySetInnerHTML={{ __html: post.content.rendered }}
 				/>
-				<img src={featuredImage} class="mask" />
+				<img src={featuredImage} alt={post.title.rendered} class="mask" />
 			</div>
 		</div>
 	);
