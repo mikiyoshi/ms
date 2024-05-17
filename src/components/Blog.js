@@ -3,6 +3,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import "./blog.css";
 
 export default function Blog({ post }) {
+	console.log(post);
 	const [featuredImage, setFeaturedimage] = useState();
 
 	const getImage = useCallback(() => {
@@ -21,6 +22,7 @@ export default function Blog({ post }) {
 	return (
 		<div class="container">
 			<div class="blog-container">
+				<h1 className="text-7xl">Blog: {post.id}</h1>
 				<p className="blog-date">
 					{new Date(Date.now()).toLocaleDateString("en-US", {
 						day: "numeric",

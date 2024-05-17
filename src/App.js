@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 import Blog from "./components/Blog";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import Service from "./pages/Service";
-import AboutUs from "./pages/AboutUs";
-import ContactUs from "./pages/ContactUs";
-import Careers from "./pages/Careers";
 
 const App = () => {
 	const [posts, setPosts] = useState([]);
@@ -27,27 +22,23 @@ const App = () => {
 	return (
 		<>
 			<p className="text-7xl text-blue-700">Hello</p>
-			{posts.map((item, index) => (
-				<Home key={index} post={item} />
-			))}
-			{posts.map((item, index) => (
-				<Services key={index} post={item} />
-			))}
-			{posts.map((item, index) => (
-				<Service key={index} post={item} />
-			))}
-			{posts.map((item, index) => (
-				<AboutUs key={index} post={item} />
-			))}
-			{posts.map((item, index) => (
-				<ContactUs key={index} post={item} />
-			))}
-			{posts.map((item, index) => (
-				<Careers key={index} post={item} />
-			))}
-			{posts.map((item, index) => (
-				<Blog key={index} post={item} />
-			))}
+			<Router>
+				<ul>
+					{posts.map((item) => (
+						<li>
+							<Link to={`/${item.id}`}>{item.title.rendered}</Link>
+						</li>
+					))}
+				</ul>
+				<Routes>
+					{posts.map((item, index) => (
+						<Route
+							path={`/${item.id}`}
+							element={<Blog key={index} post={item} />}
+						/>
+					))}
+				</Routes>
+			</Router>
 		</>
 	);
 };

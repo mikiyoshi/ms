@@ -10,3 +10,10 @@
 ## [WPGraphQLとREST APIを使ってWordPressをヘッドレス化する方法](https://kinsta.com/jp/blog/wpgraphql-vs-wp-rest-api/)
 ## [WordPress WP REST APIで投稿データを取得してReactで表示する](https://note.com/armada3524/n/n1bb6b51373f0)
 ## [Fixing and Parsing WordPress Rest Api content in React.](https://since1979.dev/fixing-and-parsing-wordpress-rest-api-content-in-react/)
+
+## 100. Google検索の仕方
+- XXX after:2021
+- XXX site:abc.com 
+  - XXX -site:abc.com
+- XXX "abc"
+- Uncaught TypeError: * in not a function
