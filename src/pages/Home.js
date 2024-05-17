@@ -18,7 +18,7 @@ export default function Home({ post }) {
 	}, [getImage]);
 
 	return (
-		<div class="container">
+		<div>
 			<h1>Home</h1>
 			<img src={featuredImage} alt={post.title.rendered} class="mask" />
 		</div>
