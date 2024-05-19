@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
-import "./App.css";
 import Blog from "./components/Blog";
+import Home from "./pages/Home";
 
 const App = () => {
 	const [posts, setPosts] = useState([]);
@@ -21,16 +21,9 @@ const App = () => {
 	}, []);
 	return (
 		<>
-			<p className="text-7xl text-blue-700">Hello</p>
 			<Router>
-				<ul>
-					{posts.map((item) => (
-						<li>
-							<Link to={`/${item.id}`}>{item.title.rendered}</Link>
-						</li>
-					))}
-				</ul>
 				<Routes>
+					<Route path="/" element={<Home />}></Route>
 					{posts.map((item, index) => (
 						<Route
 							path={`/${item.id}`}

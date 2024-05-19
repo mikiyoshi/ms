@@ -1,26 +1,36 @@
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import React, { useEffect, useState, useCallback } from "react";
 
-export default function Home({ post }) {
-	const [featuredImage, setFeaturedimage] = useState();
+export default function Home() {
+	const [posts, setPosts] = useState([]);
 
-	const getImage = useCallback(() => {
+	const fetchPosts = () => {
 		axios
-			.get(post?._links["wp:featuredmedia"][0]?.href)
-			.then((response) => {
-				setFeaturedimage(response.data.source_url);
+			.get("//mindfulseeds.torontosharehouse.com/wp/wp-json/wp/v2/posts")
+			.then((res) => {
+				setPosts(res.data);
 			})
 			.catch((error) => console.log(error));
-	}, [post]); // post が変更された場合にのみ getImage を再生成
+	};
 
 	useEffect(() => {
-		getImage();
-	}, [getImage]);
-
+		fetchPosts();
+	}, []);
 	return (
-		<div>
-			<h1>Home</h1>
-			<img src={featuredImage} alt={post.title.rendered} class="mask" />
-		</div>
+		<>
+			<h1 className="text-7xl text-blue-700">Home</h1>
+
+			<ul>
+				<li>
+					<Link to="/">Home</Link>
+				</li>
+				{posts.map((item) => (
+					<li>
+						<Link to={`/${item.id}`}>{item.title.rendered}</Link>
+					</li>
+				))}
+			</ul>
+		</>
 	);
 }
