@@ -11,6 +11,11 @@
 ## [WordPress WP REST APIで投稿データを取得してReactで表示する](https://note.com/armada3524/n/n1bb6b51373f0)
 ## [Fixing and Parsing WordPress Rest Api content in React.](https://since1979.dev/fixing-and-parsing-wordpress-rest-api-content-in-react/)
 
+# [tailwind](https://tailwindcss.com/docs/installation/using-postcss)
+
+# Flowrift Tailwind template
+## [Flowrift - Beautifully designed Tailwind CSS UI blocks](https://flowrift.com/c/blog/68U8N?view=preview)
+
 ## 100. Google検索の仕方
 - XXX after:2021
 - XXX site:abc.com 

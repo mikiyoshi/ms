@@ -19,8 +19,7 @@ export default function AboutUs({ post }) {
 
 	return (
 		<div class="container">
-			<h1>About Us</h1>
-			<img src={featuredImage} alt={post.title.rendered} class="mask" />
+			<h1 className="text-7xl text-blue-700">About Us</h1>
 		</div>
 	);
 }
