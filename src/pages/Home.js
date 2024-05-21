@@ -20,6 +20,7 @@ export default function Home() {
 	return (
 		<>
 			<h1 className="text-7xl text-blue-700">Home</h1>
+			<img src={featuredImage} alt={post.title.rendered} class="mask" />
 			<section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
 				{/* content - start */}
 				<div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
