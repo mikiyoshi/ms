@@ -107,7 +107,7 @@ const App = () => {
 											Contact
 										</NavLink>
 										<a
-											href="#"
+											href="/"
 											class="inline-flex items-center gap-1 text-lg font-semibold text-indigo-500"
 										>
 											Features
@@ -214,7 +214,7 @@ const App = () => {
 							{/* social - start */}
 							<div class="flex gap-4">
 								<a
-									href="#"
+									href="/"
 									target="_blank"
 									class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
 								>
@@ -231,7 +231,7 @@ const App = () => {
 								</a>
 
 								<a
-									href="#"
+									href="/"
 									target="_blank"
 									class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
 								>
@@ -248,7 +248,7 @@ const App = () => {
 								</a>
 
 								<a
-									href="#"
+									href="/"
 									target="_blank"
 									class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
 								>
@@ -265,7 +265,7 @@ const App = () => {
 								</a>
 
 								<a
-									href="#"
+									href="/"
 									target="_blank"
 									class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
 								>
@@ -293,7 +293,7 @@ const App = () => {
 							<nav class="flex flex-col gap-4">
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Overview
@@ -302,7 +302,7 @@ const App = () => {
 
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Solutions
@@ -311,7 +311,7 @@ const App = () => {
 
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Pricing
@@ -320,7 +320,7 @@ const App = () => {
 
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Customers
@@ -339,7 +339,7 @@ const App = () => {
 							<nav class="flex flex-col gap-4">
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										About
@@ -348,7 +348,7 @@ const App = () => {
 
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Investor Relations
@@ -357,7 +357,7 @@ const App = () => {
 
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Jobs
@@ -366,7 +366,7 @@ const App = () => {
 
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Press
@@ -375,7 +375,7 @@ const App = () => {
 
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Blog
@@ -394,7 +394,7 @@ const App = () => {
 							<nav class="flex flex-col gap-4">
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Contact
@@ -403,7 +403,7 @@ const App = () => {
 
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Documentation
@@ -412,7 +412,7 @@ const App = () => {
 
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Chat
@@ -421,7 +421,7 @@ const App = () => {
 
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										FAQ
@@ -440,7 +440,7 @@ const App = () => {
 							<nav class="flex flex-col gap-4">
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Terms of Service
@@ -449,7 +449,7 @@ const App = () => {
 
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Privacy Policy
@@ -458,7 +458,7 @@ const App = () => {
 
 								<div>
 									<a
-										href="#"
+										href="/"
 										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Cookie settings
