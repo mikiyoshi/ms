@@ -1,26 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
 import axios from "axios";
 
 export default function Home() {
-	const [posts, setPosts] = useState([]);
-
-	const fetchPosts = () => {
-		axios
-			.get("//mindfulseeds.torontosharehouse.com/wp/wp-json/wp/v2/posts")
-			.then((res) => {
-				setPosts(res.data);
-			})
-			.catch((error) => console.log(error));
-	};
-
-	useEffect(() => {
-		fetchPosts();
-	}, []);
 	return (
 		<>
 			<h1 className="text-7xl text-blue-700">Home</h1>
-			<img src={featuredImage} alt={post.title.rendered} class="mask" />
 			<section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
 				{/* content - start */}
 				<div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
