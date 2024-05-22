@@ -44,7 +44,7 @@ export default function Home() {
 					<img
 						src="https://images.unsplash.com/photo-1618004912476-29818d81ae2e?auto=format&q=75&fit=crop&w=1000"
 						loading="lazy"
-						alt="Photo by Fakurian Design"
+						alt="Fakurian Design"
 						class="h-full w-full object-cover object-center"
 					/>
 				</div>
