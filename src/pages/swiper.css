@@ -1,0 +1,12 @@
+/* .swiper {
+	width: 100px;
+	height: 300px;
+} */
+.swiper {
+	margin-left: 0;
+	margin-right: 0;
+}
+.swiper-w {
+	width: auto !important;
+	margin-right: 0 !important;
+}

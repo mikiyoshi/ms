@@ -22,3 +22,8 @@
   - XXX -site:abc.com
 - XXX "abc"
 - Uncaught TypeError: * in not a function
+
+# [Swiper React Components](https://swiperjs.com/react)
+## [Demo](https://swiperjs.com/demos)
+### [Autoplay](https://swiperjs.com/demos#autoplay)
+#### [Autoplay React](https://codesandbox.io/p/devbox/swiper-react-autoplay-pdrc53?file=%2Fsrc%2FApp.jsx%3A1%2C1-1%2C49)
