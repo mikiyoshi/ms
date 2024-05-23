@@ -65,7 +65,7 @@ export default function Home() {
 							<img
 								src="https://images.unsplash.com/photo-1618556450991-2f1af64e8191?auto=format&q=75&fit=crop&w=1000"
 								loading="lazy"
-								alt="Photo by Fakurian Design"
+								alt="Fakurian Design"
 								class="h-full w-full object-cover object-center"
 							/>
 						</div>
@@ -77,7 +77,7 @@ export default function Home() {
 							<img
 								src="https://images.unsplash.com/photo-1618556450991-2f1af64e8191?auto=format&q=75&fit=crop&w=1000"
 								loading="lazy"
-								alt="Photo by Fakurian Design"
+								alt="Fakurian Design"
 								class="h-full w-full object-cover object-center"
 							/>
 						</div>
@@ -89,7 +89,7 @@ export default function Home() {
 							<img
 								src="https://images.unsplash.com/photo-1618556450991-2f1af64e8191?auto=format&q=75&fit=crop&w=1000"
 								loading="lazy"
-								alt="Photo by Fakurian Design"
+								alt="Fakurian Design"
 								class="h-full w-full object-cover object-center"
 							/>
 						</div>
