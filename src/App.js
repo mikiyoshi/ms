@@ -26,6 +26,11 @@ const App = () => {
 	useEffect(() => {
 		fetchPosts();
 	}, []);
+
+	// add pulldown menu
+	const [isOpen, setIsOpen] = useState(false);
+	const toggleDropdown = () => setIsOpen(!isOpen);
+
 	return (
 		<>
 			<div class="bg-white pb-6 sm:pb-8 lg:pb-12">
@@ -39,20 +44,14 @@ const App = () => {
 									<div class="text-center">
 										<a
 											href="/"
-											class="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
+											class="inline-flex justify-center items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
 											aria-label="logo"
 										>
-											<svg
-												width="95"
-												height="94"
-												viewBox="0 0 95 94"
-												class="h-auto w-6 text-indigo-500"
-												fill="currentColor"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<path d="M96 0V47L48 94H0V47L48 0H96Z" />
-											</svg>
-											Flowrift
+											<img
+												src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2022/11/mindfulseeds.ca-b.png"
+												alt="logo"
+												className="w-1/3"
+											/>
 										</a>
 									</div>
 									{/* logo - end */}
@@ -86,7 +85,93 @@ const App = () => {
 												return isActive ? { color: "red" } : {};
 											}}
 										>
-											Servicies
+											<div className="relative">
+												<button
+													onClick={toggleDropdown}
+													className="inline-flex items-center gap-1 text-lg font-semibold text-indigo-500"
+												>
+													Services
+													<svg
+														xmlns="http://www.w3.org/2000/svg"
+														class="h-5 w-5 text-gray-800"
+														viewBox="0 0 20 20"
+														fill="currentColor"
+													>
+														<path
+															fill-rule="evenodd"
+															d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+															clip-rule="evenodd"
+														/>
+													</svg>
+												</button>
+												{isOpen && (
+													<div className="absolute right-0 mt-2 w-80 bg-white rounded shadow-lg z-10">
+														<NavLink
+															to="/behavioural-consultation-services"
+															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+															style={({ isActive }) => {
+																return isActive ? { color: "red" } : {};
+															}}
+														>
+															Behavioural Consultation Services
+														</NavLink>
+														<NavLink
+															to="/in-home-behavioural-intervention-services"
+															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+															style={({ isActive }) => {
+																return isActive ? { color: "red" } : {};
+															}}
+														>
+															In-home Behavioural Intervention Services
+														</NavLink>
+														<NavLink
+															to="/emotional-awareness-and-regulation-program"
+															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+															style={({ isActive }) => {
+																return isActive ? { color: "red" } : {};
+															}}
+														>
+															Emotional Awareness and Regulation Program
+														</NavLink>
+														<NavLink
+															to="/workshop-training"
+															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+															style={({ isActive }) => {
+																return isActive ? { color: "red" } : {};
+															}}
+														>
+															Workshop Training
+														</NavLink>
+														<NavLink
+															to="/social-skills-training"
+															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+															style={({ isActive }) => {
+																return isActive ? { color: "red" } : {};
+															}}
+														>
+															Social Skills Training
+														</NavLink>
+														<NavLink
+															to="/parent-and-caregiver-training"
+															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+															style={({ isActive }) => {
+																return isActive ? { color: "red" } : {};
+															}}
+														>
+															Parent and Caregiver Training
+														</NavLink>
+														<NavLink
+															to="/1-1-aba-in-home-therapy"
+															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+															style={({ isActive }) => {
+																return isActive ? { color: "red" } : {};
+															}}
+														>
+															1-1 ABA In-home Therapy
+														</NavLink>
+													</div>
+												)}
+											</div>
 										</NavLink>
 										<NavLink
 											to="/career"
@@ -106,51 +191,14 @@ const App = () => {
 										>
 											Contact
 										</NavLink>
-										<a
-											href="/"
-											class="inline-flex items-center gap-1 text-lg font-semibold text-indigo-500"
-										>
-											Features
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												class="h-5 w-5 text-gray-800"
-												viewBox="0 0 20 20"
-												fill="currentColor"
-											>
-												<path
-													fill-rule="evenodd"
-													d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-													clip-rule="evenodd"
-												/>
-											</svg>
-										</a>
 									</nav>
 									{/* nav - end */}
 								</header>
 							</div>
 						</div>
 						<ul>
-							<li>
-								<NavLink
-									to="/"
-									style={({ isActive }) => {
-										return isActive ? { color: "red" } : {};
-									}}
-								>
-									Home
-								</NavLink>
-							</li>
 							{posts.map((item) => (
-								<li>
-									<NavLink
-										to={`/${item.id}`}
-										style={({ isActive }) => {
-											return isActive ? { color: "red" } : {};
-										}}
-									>
-										{item.title.rendered}
-									</NavLink>
-								</li>
+								<li>{item.id}</li>
 							))}
 						</ul>
 						<Routes>
@@ -166,6 +214,41 @@ const App = () => {
 								) : item.id === 78 ? (
 									<Route
 										path={`/contact`}
+										element={<Blog key={index} post={item} />}
+									/>
+								) : item.id === 227 ? (
+									<Route
+										path={`/behavioural-consultation-services`}
+										element={<Blog key={index} post={item} />}
+									/>
+								) : item.id === 229 ? (
+									<Route
+										path={`/in-home-behavioural-intervention-services`}
+										element={<Blog key={index} post={item} />}
+									/>
+								) : item.id === 231 ? (
+									<Route
+										path={`/emotional-awareness-and-regulation-program`}
+										element={<Blog key={index} post={item} />}
+									/>
+								) : item.id === 233 ? (
+									<Route
+										path={`/workshop-training`}
+										element={<Blog key={index} post={item} />}
+									/>
+								) : item.id === 77 ? (
+									<Route
+										path={`/social-skills-training`}
+										element={<Blog key={index} post={item} />}
+									/>
+								) : item.id === 76 ? (
+									<Route
+										path={`/parent-and-caregiver-training`}
+										element={<Blog key={index} post={item} />}
+									/>
+								) : item.id === 75 ? (
+									<Route
+										path={`/1-1-aba-in-home-therapy`}
 										element={<Blog key={index} post={item} />}
 									/>
 								) : (
