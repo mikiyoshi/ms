@@ -4,19 +4,23 @@ import {
 	Routes,
 	Route,
 	NavLink,
+	Link,
 } from "react-router-dom";
 import axios from "axios";
 import Blog from "./components/Blog";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
 	const [posts, setPosts] = useState([]);
 
 	const fetchPosts = () => {
 		axios
-			.get("//mindfulseeds.torontosharehouse.com/wp/wp-json/wp/v2/posts")
+			.get(
+				"//mindfulseeds.torontosharehouse.com/wp/wp-json/wp/v2/posts/?per_page=100"
+			)
 			.then((res) => {
 				setPosts(res.data);
 			})
@@ -33,174 +37,169 @@ const App = () => {
 
 	return (
 		<>
-			<div class="bg-white pb-6 sm:pb-8 lg:pb-12">
-				<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-					<Router>
-						<div class="bg-white lg:pb-12">
-							<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-								{/* text - start */}
-								<div class="mb-10 md:mt-16">
-									{/* logo - start */}
-									<div class="text-center">
-										<a
-											href="/"
-											class="inline-flex justify-center items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
-											aria-label="logo"
-										>
-											<img
-												src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2022/11/mindfulseeds.ca-b.png"
-												alt="logo"
-												className="w-1/3"
-											/>
-										</a>
-									</div>
-									{/* logo - end */}
-								</div>
-								{/* text - end */}
-								<header class="flex items-center justify-between py-4 md:py-8">
-									{/* nav - start */}
-									<nav class="hidden gap-12 lg:flex mx-auto">
-										<NavLink
-											to="/"
-											className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-											style={({ isActive }) => {
-												return isActive ? { color: "red" } : {};
-											}}
-										>
-											Home
-										</NavLink>
-										<NavLink
-											to="/about-us"
-											className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-											style={({ isActive }) => {
-												return isActive ? { color: "red" } : {};
-											}}
-										>
-											About Us
-										</NavLink>
-										<NavLink
-											to="/services"
-											className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-											style={({ isActive }) => {
-												return isActive ? { color: "red" } : {};
-											}}
-										>
-											<div className="relative">
-												<button
-													onClick={toggleDropdown}
-													className="inline-flex items-center gap-1 text-lg font-semibold text-indigo-500"
-												>
-													Services
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														class="h-5 w-5 text-gray-800"
-														viewBox="0 0 20 20"
-														fill="currentColor"
-													>
-														<path
-															fill-rule="evenodd"
-															d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-															clip-rule="evenodd"
-														/>
-													</svg>
-												</button>
-												{isOpen && (
-													<div className="absolute right-0 mt-2 w-80 bg-white rounded shadow-lg z-10">
-														<NavLink
-															to="/behavioural-consultation-services"
-															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-															style={({ isActive }) => {
-																return isActive ? { color: "red" } : {};
-															}}
-														>
-															Behavioural Consultation Services
-														</NavLink>
-														<NavLink
-															to="/in-home-behavioural-intervention-services"
-															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-															style={({ isActive }) => {
-																return isActive ? { color: "red" } : {};
-															}}
-														>
-															In-home Behavioural Intervention Services
-														</NavLink>
-														<NavLink
-															to="/emotional-awareness-and-regulation-program"
-															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-															style={({ isActive }) => {
-																return isActive ? { color: "red" } : {};
-															}}
-														>
-															Emotional Awareness and Regulation Program
-														</NavLink>
-														<NavLink
-															to="/workshop-training"
-															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-															style={({ isActive }) => {
-																return isActive ? { color: "red" } : {};
-															}}
-														>
-															Workshop Training
-														</NavLink>
-														<NavLink
-															to="/social-skills-training"
-															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-															style={({ isActive }) => {
-																return isActive ? { color: "red" } : {};
-															}}
-														>
-															Social Skills Training
-														</NavLink>
-														<NavLink
-															to="/parent-and-caregiver-training"
-															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-															style={({ isActive }) => {
-																return isActive ? { color: "red" } : {};
-															}}
-														>
-															Parent and Caregiver Training
-														</NavLink>
-														<NavLink
-															to="/1-1-aba-in-home-therapy"
-															className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-															style={({ isActive }) => {
-																return isActive ? { color: "red" } : {};
-															}}
-														>
-															1-1 ABA In-home Therapy
-														</NavLink>
-													</div>
-												)}
-											</div>
-										</NavLink>
-										<NavLink
-											to="/career"
-											className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-											style={({ isActive }) => {
-												return isActive ? { color: "red" } : {};
-											}}
-										>
-											Career
-										</NavLink>
-										<NavLink
-											to="/contact"
-											className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-											style={({ isActive }) => {
-												return isActive ? { color: "red" } : {};
-											}}
-										>
-											Contact
-										</NavLink>
-									</nav>
-									{/* nav - end */}
-								</header>
+			<Router>
+				<div class="bg-white lg:pb-4">
+					<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+						{/* text - start */}
+						<div class="mb-4 md:mt-10">
+							{/* logo - start */}
+							<div class="text-center">
+								<Link
+									to="/"
+									class="inline-flex justify-center items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
+									aria-label="mindfulseeds.ca"
+								>
+									<img
+										src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2022/11/mindfulseeds.ca-b.png"
+										alt="mindfulseeds.ca"
+										className="w-1/3"
+									/>
+								</Link>
 							</div>
+							{/* logo - end */}
 						</div>
-						<ul>
-							{posts.map((item) => (
-								<li>{item.id}</li>
-							))}
-						</ul>
+						{/* text - end */}
+					</div>
+				</div>
+				<div class=" bg-slate-100">
+					<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+						<header class="flex items-center justify-between py-4 md:py-4">
+							{/* nav - start */}
+							<nav class="hidden gap-12 lg:flex mx-auto">
+								<NavLink
+									to="/"
+									className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+									style={({ isActive }) => {
+										return isActive ? { color: "red" } : {};
+									}}
+								>
+									Home
+								</NavLink>
+								<NavLink
+									to="/about-us"
+									className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+									style={({ isActive }) => {
+										return isActive ? { color: "red" } : {};
+									}}
+								>
+									About Us
+								</NavLink>
+								<div className="relative">
+									<NavLink
+										to="/services"
+										onClick={toggleDropdown}
+										className="inline-flex items-center gap-1 text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+										style={({ isActive }) => {
+											return isActive ? { color: "red" } : {};
+										}}
+									>
+										Services
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											class="h-5 w-5 text-gray-800"
+											viewBox="0 0 20 20"
+											fill="currentColor"
+										>
+											<path
+												fill-rule="evenodd"
+												d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+												clip-rule="evenodd"
+											/>
+										</svg>
+									</NavLink>
+									{isOpen && (
+										<div className="absolute right-0 mt-2 w-80 bg-white rounded shadow-lg z-10">
+											<NavLink
+												to="/behavioural-consultation-services"
+												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												style={({ isActive }) => {
+													return isActive ? { color: "red" } : {};
+												}}
+											>
+												Behavioural Consultation Services
+											</NavLink>
+											<NavLink
+												to="/in-home-behavioural-intervention-services"
+												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												style={({ isActive }) => {
+													return isActive ? { color: "red" } : {};
+												}}
+											>
+												In-home Behavioural Intervention Services
+											</NavLink>
+											<NavLink
+												to="/emotional-awareness-and-regulation-program"
+												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												style={({ isActive }) => {
+													return isActive ? { color: "red" } : {};
+												}}
+											>
+												Emotional Awareness and Regulation Program
+											</NavLink>
+											<NavLink
+												to="/workshop-training"
+												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												style={({ isActive }) => {
+													return isActive ? { color: "red" } : {};
+												}}
+											>
+												Workshop Training
+											</NavLink>
+											<NavLink
+												to="/social-skills-training"
+												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												style={({ isActive }) => {
+													return isActive ? { color: "red" } : {};
+												}}
+											>
+												Social Skills Training
+											</NavLink>
+											<NavLink
+												to="/parent-and-caregiver-training"
+												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												style={({ isActive }) => {
+													return isActive ? { color: "red" } : {};
+												}}
+											>
+												Parent and Caregiver Training
+											</NavLink>
+											<NavLink
+												to="/1-1-aba-in-home-therapy"
+												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												style={({ isActive }) => {
+													return isActive ? { color: "red" } : {};
+												}}
+											>
+												1-1 ABA In-home Therapy
+											</NavLink>
+										</div>
+									)}
+								</div>
+								{/* <NavLink
+									to="/careers"
+									className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+									style={({ isActive }) => {
+										return isActive ? { color: "red" } : {};
+									}}
+								>
+									Careers
+								</NavLink> */}
+								<NavLink
+									to="/contact"
+									className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+									style={({ isActive }) => {
+										return isActive ? { color: "red" } : {};
+									}}
+								>
+									Contact
+								</NavLink>
+							</nav>
+							{/* nav - end */}
+						</header>
+					</div>
+				</div>
+				<div class="bg-white pb-6 sm:pb-8 lg:py-12">
+					<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
 						<Routes>
 							<Route path="/" element={<Home />}></Route>
 							<Route path="/about-us" element={<AboutUs />}></Route>
@@ -208,7 +207,7 @@ const App = () => {
 							{posts.map((item, index) =>
 								item.id === 122 ? (
 									<Route
-										path={`/career`}
+										path={`/careers`}
 										element={<Blog key={index} post={item} />}
 									/>
 								) : item.id === 78 ? (
@@ -252,311 +251,88 @@ const App = () => {
 										element={<Blog key={index} post={item} />}
 									/>
 								) : (
-									<Route
-										path={`/${item.id}`}
-										element={<Blog key={index} post={item} />}
-									/>
+									<Route path="*" element={<NotFound />} />
 								)
 							)}
 						</Routes>
-					</Router>
+					</div>
 				</div>
-			</div>
 
-			<div class="bg-gray-900">
-				<footer class="mx-auto max-w-screen-2xl px-4 md:px-8">
-					<div class="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
-						<div class="col-span-full lg:col-span-2">
-							{/* logo - start */}
-							<div class="mb-4 lg:-mt-2">
-								<a
-									href="/"
-									class="inline-flex items-center gap-2 text-xl font-bold text-gray-100 md:text-2xl"
-									aria-label="logo"
-								>
-									<svg
-										width="95"
-										height="94"
-										viewBox="0 0 95 94"
-										class="h-auto w-5 text-indigo-500"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
+				<div class="bg-[#fff1df]">
+					<footer class="mx-auto max-w-screen-2xl px-4 md:px-8">
+						<div class="mb-4 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
+							<div class="col-span-full lg:col-span-2">
+								{/* logo - start */}
+								<div class="mb-4 lg:-mt-2">
+									<Link
+										to="/"
+										class="inline-flex items-center gap-2 text-xl font-bold text-gray-100 md:text-2xl"
+										aria-label="mindfulseeds.ca"
 									>
-										<path d="M96 0V47L48 94H0V47L48 0H96Z" />
-									</svg>
-									Flowrift
-								</a>
-							</div>
-							{/* logo - end */}
+										<img
+											src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2022/11/mindfulseeds.ca-b.png"
+											alt="mindfulseeds.ca"
+											className="w-1/2"
+										/>
+									</Link>
+								</div>
+								{/* logo - end */}
 
-							<p class="mb-6 text-gray-400 sm:pr-8">
+								{/* <p class="mb-6 text-gray-400 sm:pr-8">
 								Filler text is dummy text which has no meaning however looks
 								very similar to real text.
-							</p>
-
-							{/* social - start */}
-							<div class="flex gap-4">
-								<a
-									href="/"
-									target="_blank"
-									class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-								>
-									<svg
-										class="h-5 w-5"
-										width="24"
-										height="24"
-										viewBox="0 0 24 24"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-									</svg>
-								</a>
-
-								<a
-									href="/"
-									target="_blank"
-									class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-								>
-									<svg
-										class="h-5 w-5"
-										width="24"
-										height="24"
-										viewBox="0 0 24 24"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-									</svg>
-								</a>
-
-								<a
-									href="/"
-									target="_blank"
-									class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-								>
-									<svg
-										class="h-5 w-5"
-										width="24"
-										height="24"
-										viewBox="0 0 24 24"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-									</svg>
-								</a>
-
-								<a
-									href="/"
-									target="_blank"
-									class="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-								>
-									<svg
-										class="h-5 w-5"
-										width="24"
-										height="24"
-										viewBox="0 0 24 24"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-									</svg>
-								</a>
+							</p> */}
 							</div>
-							{/* social - end */}
 						</div>
 
-						{/* nav - start */}
-						<div>
-							<div class="mb-4 font-bold uppercase tracking-widest text-gray-100">
-								Products
-							</div>
-
-							<nav class="flex flex-col gap-4">
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-									>
-										Overview
-									</a>
+						<div class="border-t border-gray-300 py-8 text-left text-sm text-gray-400">
+							<div class="flex flex-col items-center justify-between gap-4  md:flex-row">
+								{/* logo - start */}
+								<div class="flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
+									Mindful Seeds © {new Date().getFullYear()}.{" "}
+									<Link to="/">mindfulseeds.ca</Link>
 								</div>
+								{/* logo - end */}
 
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+								{/* nav - start */}
+								<nav class="flex gap-4">
+									<Link
+										to="/"
+										class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
-										Solutions
-									</a>
-								</div>
-
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+										Home
+									</Link>
+									<Link
+										to="/about-us"
+										class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
-										Pricing
-									</a>
-								</div>
-
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+										About Us
+									</Link>
+									<Link
+										to="/services"
+										class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
-										Customers
-									</a>
-								</div>
-							</nav>
-						</div>
-						{/* nav - end */}
-
-						{/* nav - start */}
-						<div>
-							<div class="mb-4 font-bold uppercase tracking-widest text-gray-100">
-								Company
-							</div>
-
-							<nav class="flex flex-col gap-4">
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+										Services
+									</Link>
+									{/* <Link
+										to="/careers"
+										class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
-										About
-									</a>
-								</div>
-
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-									>
-										Investor Relations
-									</a>
-								</div>
-
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-									>
-										Jobs
-									</a>
-								</div>
-
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-									>
-										Press
-									</a>
-								</div>
-
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-									>
-										Blog
-									</a>
-								</div>
-							</nav>
-						</div>
-						{/* nav - end */}
-
-						{/* nav - start */}
-						<div>
-							<div class="mb-4 font-bold uppercase tracking-widest text-gray-100">
-								Support
-							</div>
-
-							<nav class="flex flex-col gap-4">
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+										Careers
+									</Link> */}
+									<Link
+										to="/contact"
+										class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
 									>
 										Contact
-									</a>
-								</div>
-
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-									>
-										Documentation
-									</a>
-								</div>
-
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-									>
-										Chat
-									</a>
-								</div>
-
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-									>
-										FAQ
-									</a>
-								</div>
-							</nav>
-						</div>
-						{/* nav - end */}
-
-						{/* nav - start */}
-						<div>
-							<div class="mb-4 font-bold uppercase tracking-widest text-gray-100">
-								Legal
+									</Link>
+								</nav>
+								{/* nav - end */}
 							</div>
-
-							<nav class="flex flex-col gap-4">
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-									>
-										Terms of Service
-									</a>
-								</div>
-
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-									>
-										Privacy Policy
-									</a>
-								</div>
-
-								<div>
-									<a
-										href="/"
-										class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-									>
-										Cookie settings
-									</a>
-								</div>
-							</nav>
 						</div>
-						{/* nav - end */}
-					</div>
-
-					<div class="border-t border-gray-800 py-8 text-center text-sm text-gray-400">
-						Mindful Seeds © 2024. mindfulseeds.ca
-					</div>
-				</footer>
-			</div>
+					</footer>
+				</div>
+			</Router>
 		</>
 	);
 };

@@ -27,3 +27,10 @@
 ## [Demo](https://swiperjs.com/demos)
 ### [Autoplay](https://swiperjs.com/demos#autoplay)
 #### [Autoplay React](https://codesandbox.io/p/devbox/swiper-react-autoplay-pdrc53?file=%2Fsrc%2FApp.jsx%3A1%2C1-1%2C49)
+
+
+# [WordPress REST API - more than 10 posts](https://stackoverflow.com/questions/50495815/wordpress-rest-api-more-than-10-posts)
+- add after link `/?per_page=100`
+
+# [How to fix single quote error](https://stackoverflow.com/questions/32979512/react-jsx-how-to-render-text-with-a-single-quote-example-pive-p)
+- use `&apos;`
