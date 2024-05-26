@@ -339,17 +339,6 @@ export default function Home() {
 
 							<span class="text-sm text-gray-500">*Required</span>
 						</div>
-
-						<p class="text-xs text-gray-400">
-							By signing up to our newsletter you agree to our{" "}
-							<a
-								href="/"
-								class="underline transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-							>
-								Privacy Policy
-							</a>
-							.
-						</p>
 					</form>
 					{/* form - end */}
 				</div>

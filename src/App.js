@@ -31,10 +31,6 @@ const App = () => {
 		fetchPosts();
 	}, []);
 
-	// add pulldown menu
-	const [isOpen, setIsOpen] = useState(false);
-	const toggleDropdown = () => setIsOpen(!isOpen);
-
 	return (
 		<>
 			<Router>
@@ -61,37 +57,27 @@ const App = () => {
 						{/* text - end */}
 					</div>
 				</div>
-				<div class=" bg-slate-100">
+				<div class="bg-slate-100">
 					<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-						<header class="flex items-center justify-between py-4 md:py-4">
+						<header class="flex items-center justify-between">
 							{/* nav - start */}
-							<nav class="hidden gap-12 lg:flex mx-auto">
+							<nav class="hidden lg:flex mx-auto">
 								<NavLink
 									to="/"
-									className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-									style={({ isActive }) => {
-										return isActive ? { color: "red" } : {};
-									}}
+									className="text-lg font-semibold text-gray-600 transition duration-100 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
 								>
 									Home
 								</NavLink>
 								<NavLink
 									to="/about-us"
-									className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-									style={({ isActive }) => {
-										return isActive ? { color: "red" } : {};
-									}}
+									className="text-lg font-semibold text-gray-600 transition duration-100 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
 								>
 									About Us
 								</NavLink>
-								<div className="relative">
+								<div className="relative group">
 									<NavLink
 										to="/services"
-										onClick={toggleDropdown}
-										className="inline-flex items-center gap-1 text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-										style={({ isActive }) => {
-											return isActive ? { color: "red" } : {};
-										}}
+										className="inline-flex items-center gap-1 text-lg font-semibold text-gray-600 transition duration-100 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
 									>
 										Services
 										<svg
@@ -107,89 +93,97 @@ const App = () => {
 											/>
 										</svg>
 									</NavLink>
-									{isOpen && (
-										<div className="absolute right-0 mt-2 w-80 bg-white rounded shadow-lg z-10">
+									<div class="absolute right-0 w-48 bg-white rounded shadow-lg z-10 hidden group-hover:block">
+										<div className="absolute right-0 w-80 bg-white rounded shadow-lg z-10">
 											<NavLink
 												to="/behavioural-consultation-services"
-												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
 												style={({ isActive }) => {
-													return isActive ? { color: "red" } : {};
+													return isActive
+														? { "background-color": "#c5e1f1" }
+														: {};
 												}}
 											>
 												Behavioural Consultation Services
 											</NavLink>
 											<NavLink
 												to="/in-home-behavioural-intervention-services"
-												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
 												style={({ isActive }) => {
-													return isActive ? { color: "red" } : {};
+													return isActive
+														? { "background-color": "#c5e1f1" }
+														: {};
 												}}
 											>
 												In-home Behavioural Intervention Services
 											</NavLink>
 											<NavLink
 												to="/emotional-awareness-and-regulation-program"
-												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
 												style={({ isActive }) => {
-													return isActive ? { color: "red" } : {};
+													return isActive
+														? { "background-color": "#c5e1f1" }
+														: {};
 												}}
 											>
 												Emotional Awareness and Regulation Program
 											</NavLink>
 											<NavLink
 												to="/workshop-training"
-												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
 												style={({ isActive }) => {
-													return isActive ? { color: "red" } : {};
+													return isActive
+														? { "background-color": "#c5e1f1" }
+														: {};
 												}}
 											>
 												Workshop Training
 											</NavLink>
 											<NavLink
 												to="/social-skills-training"
-												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
 												style={({ isActive }) => {
-													return isActive ? { color: "red" } : {};
+													return isActive
+														? { "background-color": "#c5e1f1" }
+														: {};
 												}}
 											>
 												Social Skills Training
 											</NavLink>
 											<NavLink
 												to="/parent-and-caregiver-training"
-												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
 												style={({ isActive }) => {
-													return isActive ? { color: "red" } : {};
+													return isActive
+														? { "background-color": "#c5e1f1" }
+														: {};
 												}}
 											>
 												Parent and Caregiver Training
 											</NavLink>
 											<NavLink
 												to="/1-1-aba-in-home-therapy"
-												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
 												style={({ isActive }) => {
-													return isActive ? { color: "red" } : {};
+													return isActive
+														? { "background-color": "#c5e1f1" }
+														: {};
 												}}
 											>
 												1-1 ABA In-home Therapy
 											</NavLink>
 										</div>
-									)}
+									</div>
 								</div>
 								{/* <NavLink
 									to="/careers"
-									className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-									style={({ isActive }) => {
-										return isActive ? { color: "red" } : {};
-									}}
+									className="text-lg font-semibold text-gray-600 transition duration-100 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
 								>
 									Careers
 								</NavLink> */}
 								<NavLink
 									to="/contact"
-									className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
-									style={({ isActive }) => {
-										return isActive ? { color: "red" } : {};
-									}}
+									className="text-lg font-semibold text-gray-600 transition duration-100 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
 								>
 									Contact
 								</NavLink>
@@ -298,31 +292,31 @@ const App = () => {
 								<nav class="flex gap-4">
 									<Link
 										to="/"
-										class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+										class="font-semibold text-gray-500 transition duration-100 hover:text-gray-900 active:text-gray-900 focus:text-gray-900"
 									>
 										Home
 									</Link>
 									<Link
 										to="/about-us"
-										class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+										class="font-semibold text-gray-500 transition duration-100 hover:text-gray-900 active:text-gray-900 focus:text-gray-900"
 									>
 										About Us
 									</Link>
 									<Link
 										to="/services"
-										class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+										class="font-semibold text-gray-500 transition duration-100 hover:text-gray-900 active:text-gray-900 focus:text-gray-900"
 									>
 										Services
 									</Link>
 									{/* <Link
 										to="/careers"
-										class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+										class="font-semibold text-gray-500 transition duration-100 hover:text-gray-900 active:text-gray-900 focus:text-gray-900"
 									>
 										Careers
 									</Link> */}
 									<Link
 										to="/contact"
-										class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+										class="font-semibold text-gray-500 transition duration-100 hover:text-gray-900 active:text-gray-900 focus:text-gray-900 focus:text-secondary-600"
 									>
 										Contact
 									</Link>

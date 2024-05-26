@@ -34,3 +34,40 @@
 
 # [How to fix single quote error](https://stackoverflow.com/questions/32979512/react-jsx-how-to-render-text-with-a-single-quote-example-pive-p)
 - use `&apos;`
+
+# [Customizing your theme](https://tailwindcss.com/docs/background-color#customizing-your-theme)
+
+```
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'regal-blue': '#243c5a',
+      },
+    }
+  }
+}
+```
+
+# [Tailwind Customizing Colors](https://tailwindcss.com/docs/customizing-colors)
+
+## Color Variation
+- primary `#5cb85c`
+- secondary `#c6e8fb`
+  - select highlight
+    - command + K
+    - command + G
+```
+    primary: {
+      100: "#def1de",
+      200: "#bee3be",
+      300: "#9dd49d",
+      400: "#7dc67d",
+      500: "#5cb85c",
+      600: "#4a934a",
+      700: "#376e37",
+      800: "#254a25",
+      900: "#122512",
+    }
+```
