@@ -71,3 +71,31 @@ module.exports = {
       900: "#122512",
     }
 ```
+
+# [Tailwind UI Using React](https://tailwindui.com/documentation#using-react)
+- `npm install @headlessui/react @heroicons/react`
+
+## [Headers Demo](https://tailwindui.com/components/marketing/elements/headers)
+
+# [Scroll Restoration](https://v5.reactrouter.com/web/guides/scroll-restoration)
+  - `react-router-dom` didn't have a function each header navigation link to scroll top
+  - `react-router-dom`を使うとヘッダーナビゲーションからのリンクは、ページ遷移しても中身だけ入れ替わるので、ページの先頭から表示されない
+## create `ScrollToTop.js` file in `components` folder
+```
+// ScrollToTop.js
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+export default function ScrollToTop() {
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
+
+	return null;
+}
+
+```
+## add `<ScrollToTop />` in `App.js` file
+### [React Scroll to Top on Page Change with React Router](https://www.youtube.com/watch?si=zSu9lm1ychwhDkNr&v=8c5eMyJR9Js&feature=youtu.be)

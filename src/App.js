@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
+
+// React Router
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -6,14 +8,81 @@ import {
 	NavLink,
 	Link,
 } from "react-router-dom";
+
 import axios from "axios";
 import Blog from "./components/Blog";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
+
+// Navigation
+import {
+	Dialog,
+	DialogPanel,
+	Disclosure,
+	DisclosureButton,
+	DisclosurePanel,
+	Popover,
+	PopoverButton,
+	PopoverGroup,
+	PopoverPanel,
+	Transition,
+} from "@headlessui/react";
+import {
+	ArrowPathIcon,
+	Bars3Icon,
+	ChartPieIcon,
+	CursorArrowRaysIcon,
+	FingerPrintIcon,
+	SquaresPlusIcon,
+	XMarkIcon,
+} from "@heroicons/react/24/outline";
+import {
+	ChevronDownIcon,
+	PhoneIcon,
+	PlayCircleIcon,
+} from "@heroicons/react/20/solid";
+
+const products = [
+	{
+		name: "Behavioural Consultation Services",
+		href: "/behavioural-consultation-services",
+	},
+	{
+		name: "In-home Behavioural Intervention Services",
+		href: "/in-home-behavioural-intervention-services",
+	},
+	{
+		name: "Emotional Awareness and Regulation Program",
+		href: "/emotional-awareness-and-regulation-program",
+	},
+	{
+		name: "Workshop Training",
+		href: "/workshop-training",
+	},
+	{
+		name: "Social Skills Training",
+		href: "/social-skills-training",
+	},
+	{
+		name: "Parent and Caregiver Training",
+		href: "/parent-and-caregiver-training",
+	},
+	{
+		name: "1-1 ABA In-home Therapy",
+		href: "/1-1-aba-in-home-therapy",
+	},
+];
+
+function classNames(...classes) {
+	return classes.filter(Boolean).join(" ");
+}
 
 const App = () => {
+	// Navigation
+	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [posts, setPosts] = useState([]);
 
 	const fetchPosts = () => {
@@ -34,6 +103,7 @@ const App = () => {
 	return (
 		<>
 			<Router>
+				<ScrollToTop />
 				<div class="bg-white lg:pb-4">
 					<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
 						{/* text - start */}
@@ -57,141 +127,180 @@ const App = () => {
 						{/* text - end */}
 					</div>
 				</div>
-				<div class="bg-slate-100">
-					<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-						<header class="flex items-center justify-between">
-							{/* nav - start */}
-							<nav class="hidden lg:flex mx-auto">
-								<NavLink
-									to="/"
-									className="text-lg font-semibold text-gray-600 transition duration-100 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
+				{/* Navigation - start */}
+
+				<header className="bg-slate-100 sticky top-0 z-50">
+					<nav
+						className="mx-auto flex justify-center max-w-7xl items-center relative"
+						aria-label="Global"
+					>
+						{/* <div className="flex lg:flex-1">
+							<Link to="/" className="-m-1.5 p-1.5">
+								<span className="sr-only">Your Company</span>
+								<img
+									className="h-8 w-auto"
+									src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+									alt=""
+								/>
+							</Link>
+						</div> */}
+						<div className="flex lg:hidden">
+							<button
+								type="button"
+								className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+								onClick={() => setMobileMenuOpen(true)}
+							>
+								<span className="sr-only">Open main menu</span>
+								<Bars3Icon className="h-6 w-6" aria-hidden="true" />
+							</button>
+						</div>
+						<PopoverGroup className="hidden lg:flex lg:gap-x-12 ">
+							<NavLink
+								to="/#Home"
+								className="text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
+							>
+								Home
+							</NavLink>
+							<NavLink
+								to="/about-us"
+								className="text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
+							>
+								About Us
+							</NavLink>
+							<Popover className="relative">
+								<PopoverButton className="flex items-center gap-x-1 text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4">
+									Services
+									<ChevronDownIcon
+										className="h-5 w-5 flex-none text-gray-400"
+										aria-hidden="true"
+									/>
+								</PopoverButton>
+
+								<Transition
+									enter="transition ease-out duration-200"
+									enterFrom="opacity-0 translate-y-1"
+									enterTo="opacity-100 translate-y-0"
+									leave="transition ease-in duration-150"
+									leaveFrom="opacity-100 translate-y-0"
+									leaveTo="opacity-0 translate-y-1"
 								>
-									Home
-								</NavLink>
-								<NavLink
-									to="/about-us"
-									className="text-lg font-semibold text-gray-600 transition duration-100 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
-								>
-									About Us
-								</NavLink>
-								<div className="relative group">
-									<NavLink
-										to="/services"
-										className="inline-flex items-center gap-1 text-lg font-semibold text-gray-600 transition duration-100 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
-									>
-										Services
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											class="h-5 w-5 text-gray-800"
-											viewBox="0 0 20 20"
-											fill="currentColor"
-										>
-											<path
-												fill-rule="evenodd"
-												d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-												clip-rule="evenodd"
-											/>
-										</svg>
-									</NavLink>
-									<div class="absolute right-0 w-48 bg-white rounded shadow-lg z-10 hidden group-hover:block">
-										<div className="absolute right-0 w-80 bg-white rounded shadow-lg z-10">
-											<NavLink
-												to="/behavioural-consultation-services"
-												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
-												style={({ isActive }) => {
-													return isActive
-														? { "background-color": "#c5e1f1" }
-														: {};
-												}}
-											>
-												Behavioural Consultation Services
-											</NavLink>
-											<NavLink
-												to="/in-home-behavioural-intervention-services"
-												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
-												style={({ isActive }) => {
-													return isActive
-														? { "background-color": "#c5e1f1" }
-														: {};
-												}}
-											>
-												In-home Behavioural Intervention Services
-											</NavLink>
-											<NavLink
-												to="/emotional-awareness-and-regulation-program"
-												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
-												style={({ isActive }) => {
-													return isActive
-														? { "background-color": "#c5e1f1" }
-														: {};
-												}}
-											>
-												Emotional Awareness and Regulation Program
-											</NavLink>
-											<NavLink
-												to="/workshop-training"
-												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
-												style={({ isActive }) => {
-													return isActive
-														? { "background-color": "#c5e1f1" }
-														: {};
-												}}
-											>
-												Workshop Training
-											</NavLink>
-											<NavLink
-												to="/social-skills-training"
-												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
-												style={({ isActive }) => {
-													return isActive
-														? { "background-color": "#c5e1f1" }
-														: {};
-												}}
-											>
-												Social Skills Training
-											</NavLink>
-											<NavLink
-												to="/parent-and-caregiver-training"
-												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
-												style={({ isActive }) => {
-													return isActive
-														? { "background-color": "#c5e1f1" }
-														: {};
-												}}
-											>
-												Parent and Caregiver Training
-											</NavLink>
-											<NavLink
-												to="/1-1-aba-in-home-therapy"
-												className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-secondary-500"
-												style={({ isActive }) => {
-													return isActive
-														? { "background-color": "#c5e1f1" }
-														: {};
-												}}
-											>
-												1-1 ABA In-home Therapy
-											</NavLink>
+									<PopoverPanel className="absolute -left-8 top-full z-10 w-screen max-w-md overflow-hidden bg-white shadow-lg ring-1 ring-gray-900/5">
+										<div>
+											{products.map((item) => (
+												<div
+													key={item.name}
+													className="group relative flex items-center gap-x-6 text-sm leading-6"
+												>
+													<div className="flex-auto">
+														<NavLink
+															to={item.href}
+															className="block font-semibold text-gray-900 p-4 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
+														>
+															{item.name}
+															<span className="absolute inset-0" />
+														</NavLink>
+													</div>
+												</div>
+											))}
 										</div>
+									</PopoverPanel>
+								</Transition>
+							</Popover>
+							{/* <NavLink
+								to="/careers"
+								className="text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
+							>
+								Careers
+							</NavLink> */}
+							<NavLink
+								to="contact"
+								className="text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
+							>
+								Contact
+							</NavLink>
+						</PopoverGroup>
+					</nav>
+					<Dialog
+						className="lg:hidden"
+						open={mobileMenuOpen}
+						onClose={setMobileMenuOpen}
+					>
+						<div className="fixed inset-0 z-10" />
+						<DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+							<div className="flex items-center justify-between">
+								<a href="#" className="-m-1.5 p-1.5">
+									<span className="sr-only">mindfulseeds.ca</span>
+									<img
+										className="h-8 w-auto"
+										src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2022/11/mindfulseeds.ca-b.png"
+										alt="mindfulseeds.ca"
+									/>
+								</a>
+								<button
+									type="button"
+									className="-m-2.5 rounded-md p-2.5 text-gray-700"
+									onClick={() => setMobileMenuOpen(false)}
+								>
+									<span className="sr-only">Close menu</span>
+									<XMarkIcon className="h-6 w-6" aria-hidden="true" />
+								</button>
+							</div>
+							<div className="mt-6 flow-root">
+								<div className="-my-6 divide-y divide-gray-500/10">
+									<div className="space-y-2 py-6">
+										<NavLink
+											to="/"
+											className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
+										>
+											Home
+										</NavLink>
+										<NavLink
+											to="/about-us"
+											className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
+										>
+											About Us
+										</NavLink>
+										<Disclosure as="div" className="-mx-3">
+											{({ open }) => (
+												<>
+													<DisclosureButton className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200">
+														Services
+														<ChevronDownIcon
+															className={classNames(
+																open ? "rotate-180" : "",
+																"h-5 w-5 flex-none"
+															)}
+															aria-hidden="true"
+														/>
+													</DisclosureButton>
+													<DisclosurePanel className="mt-2 space-y-2">
+														{[...products].map((item) => (
+															<NavLink
+																key={item.name}
+																as="a"
+																to={item.href}
+																className="block rounded-lg py-2 pl-6 pr-3 text-lg font-semibold leading-7 text-gray-900 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
+															>
+																{item.name}
+															</NavLink>
+														))}
+													</DisclosurePanel>
+												</>
+											)}
+										</Disclosure>
+										<NavLink
+											to="/contact"
+											className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
+										>
+											Contact
+										</NavLink>
 									</div>
 								</div>
-								{/* <NavLink
-									to="/careers"
-									className="text-lg font-semibold text-gray-600 transition duration-100 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
-								>
-									Careers
-								</NavLink> */}
-								<NavLink
-									to="/contact"
-									className="text-lg font-semibold text-gray-600 transition duration-100 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
-								>
-									Contact
-								</NavLink>
-							</nav>
-							{/* nav - end */}
-						</header>
-					</div>
-				</div>
+							</div>
+						</DialogPanel>
+					</Dialog>
+				</header>
+				{/* Navigation - end */}
 				<div class="bg-white pb-6 sm:pb-8 lg:py-12">
 					<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
 						<Routes>
@@ -279,7 +388,7 @@ const App = () => {
 							</div>
 						</div>
 
-						<div class="border-t border-gray-300 py-8 text-left text-sm text-gray-400">
+						<div class="border-t border-gray-300 py-8 text-left text-lg text-gray-400">
 							<div class="flex flex-col items-center justify-between gap-4  md:flex-row">
 								{/* logo - start */}
 								<div class="flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
