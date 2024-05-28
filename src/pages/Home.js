@@ -71,7 +71,7 @@ export default function Home() {
 						{/* image - start */}
 						<div class="">
 							<img
-								src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/girl_in_coloring_letter_a_with_red_on_kitchen_table-scopio-11a0e6d0-04ae-4a12-8788-ce48c1b5a343.jpg"
+								src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-d75b0782-4a1a-4061-bb52-c23e63e4b3ff.jpg"
 								loading="lazy"
 								alt="Fakurian Design"
 								class="h-full w-full object-cover object-center"
@@ -83,7 +83,7 @@ export default function Home() {
 						{/* image - start */}
 						<div class="">
 							<img
-								src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/girl_in_coloring_letter_a_with_red_on_kitchen_table-scopio-11a0e6d0-04ae-4a12-8788-ce48c1b5a343.jpg"
+								src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-78da4c1b-241b-4411-be3f-d8af22e794e3.jpg"
 								loading="lazy"
 								alt="Fakurian Design"
 								class="h-full w-full object-cover object-center"
