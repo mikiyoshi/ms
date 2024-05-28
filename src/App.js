@@ -30,20 +30,8 @@ import {
 	PopoverPanel,
 	Transition,
 } from "@headlessui/react";
-import {
-	ArrowPathIcon,
-	Bars3Icon,
-	ChartPieIcon,
-	CursorArrowRaysIcon,
-	FingerPrintIcon,
-	SquaresPlusIcon,
-	XMarkIcon,
-} from "@heroicons/react/24/outline";
-import {
-	ChevronDownIcon,
-	PhoneIcon,
-	PlayCircleIcon,
-} from "@heroicons/react/20/solid";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const products = [
 	{

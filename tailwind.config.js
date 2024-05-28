@@ -3,6 +3,10 @@ module.exports = {
 	purge: ["./src/*.{js,jsx,ts,tsx}", "./src/*/*.{js,jsx,ts,tsx}"],
 	theme: {
 		extend: {
+			fontFamily: {
+				"protest-riot-regular": ["Protest Riot", "sans-serif"],
+				"patrick-hand-regular": ["Patrick Hand", "cursive"],
+			},
 			colors: {
 				primary: {
 					100: "#def1de",
