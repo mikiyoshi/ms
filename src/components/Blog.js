@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState, useCallback } from "react";
 import "./blog.css";
+import ContactForm from "./ContactForm";
 
 export default function Blog({ post }) {
 	console.log(post);
@@ -53,6 +54,7 @@ export default function Blog({ post }) {
 						className="blog-excerpt"
 						dangerouslySetInnerHTML={{ __html: post.content.rendered }}
 					></div>
+					<ContactForm />
 				</div>
 			</div>
 		</>

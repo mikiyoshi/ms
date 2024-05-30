@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import "./swiper.css";
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 const products = [
 	{
