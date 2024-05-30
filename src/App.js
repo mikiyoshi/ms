@@ -111,7 +111,7 @@ const App = () => {
 			</div>
 			{/* Navigation - start */}
 
-			<header className="bg-slate-100 sticky top-0 z-50">
+			<header className="bg-slate-100 sticky top-0 z-10">
 				<nav
 					className="mx-auto flex justify-center max-w-7xl items-center relative"
 					aria-label="Global"
