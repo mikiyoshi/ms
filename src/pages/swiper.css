@@ -7,6 +7,10 @@
 	margin-right: 0;
 }
 .swiper-w {
-	width: auto !important;
+	width: 100% !important;
 	margin-right: 0 !important;
+}
+.swiper-button-prev,
+.swiper-button-next {
+	color: #5cb85c;
 }

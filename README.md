@@ -99,3 +99,22 @@ export default function ScrollToTop() {
 ```
 ## add `<ScrollToTop />` in `App.js` file
 ### [React Scroll to Top on Page Change with React Router](https://www.youtube.com/watch?si=zSu9lm1ychwhDkNr&v=8c5eMyJR9Js&feature=youtu.be)
+
+# [【Tailwind CSS】長い文字列を三点リーダー（…）で省略する方法](https://zenn.dev/ilove/articles/8a93705d396e05)
+- import `npm install @tailwindcss/line-clamp`
+```
+// tailwind.config.js
+module.exports = {
+  theme: {
+    // ...
+  },
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    // ...
+  ],
+}
+```
+- add class like a `line-clamp-3`
+
+# [Heroicons](https://heroicons.com/)
+- [Design resources](https://tailwindcss.com/resources)

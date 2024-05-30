@@ -32,6 +32,7 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import ContactUs from "./pages/ContactUs";
 
 const products = [
 	{
@@ -144,7 +145,7 @@ const App = () => {
 						</div>
 						<PopoverGroup className="hidden lg:flex lg:gap-x-12 ">
 							<NavLink
-								to="/#Home"
+								to="/"
 								className="text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
 							>
 								Home
@@ -289,8 +290,8 @@ const App = () => {
 					</Dialog>
 				</header>
 				{/* Navigation - end */}
-				<div class="bg-white pb-6 sm:pb-8 lg:py-12">
-					<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+				<div class="bg-white">
+					<div class="mx-auto max-w-screen-2xl">
 						<Routes>
 							<Route path="/" element={<Home />}></Route>
 							<Route path="/about-us" element={<AboutUs />}></Route>
@@ -304,7 +305,7 @@ const App = () => {
 								) : item.id === 78 ? (
 									<Route
 										path={`/contact`}
-										element={<Blog key={index} post={item} />}
+										element={<ContactUs key={index} post={item} />}
 									/>
 								) : item.id === 227 ? (
 									<Route
