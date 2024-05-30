@@ -1,7 +1,7 @@
 import React from "react";
 
 // React Router
-import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -194,13 +194,13 @@ export default function Home() {
 										</p>
 
 										<div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
-											<NavLink
+											<Link
 												key={item.name}
 												to={item.href}
 												className="inline-block rounded-lg bg-primary-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base"
 											>
 												Read More
-											</NavLink>
+											</Link>
 										</div>
 									</div>
 								</section>
