@@ -1,4 +1,8 @@
 import React from "react";
+
+// React Router
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -12,6 +16,7 @@ import "./swiper.css";
 
 // import required modules
 import { Autoplay, Navigation } from "swiper/modules";
+import ContactForm from "../components/ContactForm";
 
 const products = [
 	{
@@ -77,210 +82,134 @@ const products = [
 
 export default function Home() {
 	return (
-		<div className="bg-white px-4 md:px-8 pb-6 sm:pb-8 lg:py-12">
-			<section class="mb-8 flex flex-col justify-between gap-6 sm:gap-10 md:mb-16 md:gap-16 lg:flex-row">
-				{/* content - start */}
-				<div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12">
-					<h1 class="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-4xl">
-						Nurturing Behaviour Grouth
-					</h1>
+		<>
+			<div className="bg-white px-4 md:px-8 pb-6 sm:pb-8 lg:py-12">
+				<section class="mb-8 flex flex-col justify-between gap-6 sm:gap-10 md:mb-16 md:gap-16 lg:flex-row">
+					{/* content - start */}
+					<div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12">
+						<h1 class="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-4xl">
+							Nurturing Behaviour Grouth
+						</h1>
 
-					<p class="mb-4 font-semibold text-slate-500 md:mb-6 md:text-lg xl:text-xl font-protest-riot-regular">
-						Mindful Seeds Inc. provides behaviour therapy services to
-						individuals with developmental disabilities and special needs,
-						including family-centered coaching to caregivers, and behavioural
-						management training to staff working with clients with complex
-						needs.
-					</p>
+						<p class="mb-4 font-semibold text-slate-500 md:mb-6 md:text-lg xl:text-xl font-protest-riot-regular">
+							Mindful Seeds Inc. provides behaviour therapy services to
+							individuals with developmental disabilities and special needs,
+							including family-centered coaching to caregivers, and behavioural
+							management training to staff working with clients with complex
+							needs.
+						</p>
 
-					<div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
-						<a
-							href="/"
-							class="inline-block rounded-lg bg-primary-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
-						>
-							About Us
-						</a>
+						<div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
+							<a
+								href="/"
+								class="inline-block rounded-lg bg-primary-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base"
+							>
+								About Us
+							</a>
+						</div>
 					</div>
-				</div>
-				{/* content - end */}
-				<Swiper
-					centeredSlides={true}
-					autoplay={{
-						delay: 2500,
-						disableOnInteraction: false,
-					}}
-					pagination={{
-						clickable: false,
-					}}
-					navigation={false}
-					modules={[Autoplay, Navigation]}
-					className="mySwiper h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-96 lg:w-5/12 xl:w-5/12"
-				>
-					<SwiperSlide className="swiper-w">
-						{/* image - start */}
-						<img
-							src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/girl_in_coloring_letter_a_with_red_on_kitchen_table-scopio-11a0e6d0-04ae-4a12-8788-ce48c1b5a343.jpg"
-							loading="lazy"
-							alt="Fakurian Design"
-							className="h-full w-full object-cover object-center"
-						/>
-						{/* image - end */}
-					</SwiperSlide>
-					<SwiperSlide className="swiper-w">
-						{/* image - start */}
-						<img
-							src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-d75b0782-4a1a-4061-bb52-c23e63e4b3ff.jpg"
-							loading="lazy"
-							alt="Fakurian Design"
-							className="h-full w-full object-cover object-center"
-						/>
-						{/* image - end */}
-					</SwiperSlide>
-					<SwiperSlide className="swiper-w">
-						{/* image - start */}
-						<img
-							src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-78da4c1b-241b-4411-be3f-d8af22e794e3.jpg"
-							loading="lazy"
-							alt="Fakurian Design"
-							className="h-full w-full object-cover object-center"
-						/>
-						{/* image - end */}
-					</SwiperSlide>
-				</Swiper>
-			</section>
-			<div>
-				<Swiper
-					spaceBetween={30}
-					centeredSlides={true}
-					autoplay={{
-						delay: 5000,
-						disableOnInteraction: false,
-					}}
-					pagination={{
-						clickable: true,
-					}}
-					navigation={true}
-					modules={[Autoplay, Navigation]}
-					className="mySwiper"
-				>
-					{[...products].map((item) => (
-						<SwiperSlide>
-							<section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row px-20">
-								<div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-6/12">
-									<img
-										src={item.img}
-										loading="lazy"
-										alt={item.name}
-										className="h-full w-full object-cover object-center"
-									/>
-								</div>
-								<div className="flex flex-col justify-center sm:text-center lg:text-left xl:w-6/12">
-									<p className="mb-4 font-semibold text-secondary-500 md:mb-6 md:text-lg xl:text-xl">
-										{item.category}
-									</p>
-
-									<h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-2xl">
-										{item.name}
-									</h1>
-
-									<p className="mb-8 leading-relaxed text-gray-500 md:mb-12 xl:text-lg line-clamp-3">
-										{item.contents}
-									</p>
-
-									<div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
-										<a
-											key={item.name}
-											to={item.href}
-											className="inline-block rounded-lg bg-primary-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
-										>
-											Read More
-										</a>
-									</div>
-								</div>
-							</section>
+					{/* content - end */}
+					<Swiper
+						centeredSlides={true}
+						autoplay={{
+							delay: 2500,
+							disableOnInteraction: false,
+						}}
+						pagination={{
+							clickable: false,
+						}}
+						navigation={false}
+						modules={[Autoplay, Navigation]}
+						className="mySwiper h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-96 lg:w-5/12 xl:w-5/12"
+					>
+						<SwiperSlide className="swiper-w">
+							{/* image - start */}
+							<img
+								src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/girl_in_coloring_letter_a_with_red_on_kitchen_table-scopio-11a0e6d0-04ae-4a12-8788-ce48c1b5a343.jpg"
+								loading="lazy"
+								alt="Fakurian Design"
+								className="h-full w-full object-cover object-center"
+							/>
+							{/* image - end */}
 						</SwiperSlide>
-					))}
-				</Swiper>
-			</div>
-			<div class="bg-white py-6 sm:py-8 lg:py-12">
-				<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-					{/* text - start */}
-					<div class="mb-10 md:mb-16">
-						<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-							Contact Us
-						</h2>
-					</div>
-					{/* text - end */}
-
-					{/* form - start */}
-					<form class="mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2">
-						<div class="sm:col-span-2">
-							<label
-								for="your-name"
-								class="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-							>
-								Your name * (required)
-							</label>
-							<input
-								name="your-name"
-								class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-								placeholder="Your Full Name"
+						<SwiperSlide className="swiper-w">
+							{/* image - start */}
+							<img
+								src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-d75b0782-4a1a-4061-bb52-c23e63e4b3ff.jpg"
+								loading="lazy"
+								alt="Fakurian Design"
+								className="h-full w-full object-cover object-center"
 							/>
-						</div>
-
-						<div class="sm:col-span-2">
-							<label
-								for="email"
-								class="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-							>
-								Your email * (required)
-							</label>
-							<input
-								name="email"
-								class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-								placeholder="yourmail@example.com"
+							{/* image - end */}
+						</SwiperSlide>
+						<SwiperSlide className="swiper-w">
+							{/* image - start */}
+							<img
+								src="http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-78da4c1b-241b-4411-be3f-d8af22e794e3.jpg"
+								loading="lazy"
+								alt="Fakurian Design"
+								className="h-full w-full object-cover object-center"
 							/>
-						</div>
+							{/* image - end */}
+						</SwiperSlide>
+					</Swiper>
+				</section>
+				<div>
+					<Swiper
+						spaceBetween={30}
+						centeredSlides={true}
+						autoplay={{
+							delay: 5000,
+							disableOnInteraction: false,
+						}}
+						pagination={{
+							clickable: true,
+						}}
+						navigation={true}
+						modules={[Autoplay, Navigation]}
+						className="mySwiper"
+					>
+						{[...products].map((item) => (
+							<SwiperSlide>
+								<section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row px-20">
+									<div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-6/12">
+										<img
+											src={item.img}
+											loading="lazy"
+											alt={item.name}
+											className="h-full w-full object-cover object-center"
+										/>
+									</div>
+									<div className="flex flex-col justify-center sm:text-center lg:text-left xl:w-6/12">
+										<p className="mb-4 font-semibold text-secondary-500 md:mb-6 md:text-lg xl:text-xl">
+											{item.category}
+										</p>
 
-						<div class="sm:col-span-2">
-							<label
-								for="subject"
-								class="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-							>
-								Subject * (required)
-							</label>
-							<input
-								name="subject"
-								class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-								placeholder="Subject"
-							/>
-						</div>
+										<h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-2xl">
+											{item.name}
+										</h1>
 
-						<div class="sm:col-span-2">
-							<label
-								for="message"
-								class="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-							>
-								Your message (optional)
-							</label>
-							<textarea
-								name="message"
-								class="h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-								placeholder="Your Message"
-							></textarea>
-						</div>
+										<p className="mb-8 leading-relaxed text-gray-500 md:mb-12 xl:text-lg line-clamp-3">
+											{item.contents}
+										</p>
 
-						<div class="flex items-center justify-between sm:col-span-2">
-							<button class="inline-block rounded-lg bg-primary-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base">
-								Submit
-							</button>
-
-							<span class="text-sm text-gray-500">*Required</span>
-						</div>
-					</form>
-					{/* form - end */}
+										<div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
+											<NavLink
+												key={item.name}
+												to={item.href}
+												className="inline-block rounded-lg bg-primary-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base"
+											>
+												Read More
+											</NavLink>
+										</div>
+									</div>
+								</section>
+							</SwiperSlide>
+						))}
+					</Swiper>
 				</div>
+				<ContactForm />
 			</div>
-		</div>
+		</>
 	);
 }

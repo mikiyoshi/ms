@@ -1115,6 +1115,10 @@ video {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(165 180 252 / var(--tw-ring-opacity));
 }
+.ring-primary-300{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(157 212 157 / var(--tw-ring-opacity));
+}
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
