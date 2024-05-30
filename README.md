@@ -77,6 +77,17 @@ module.exports = {
 
 ## [Headers Demo](https://tailwindui.com/components/marketing/elements/headers)
 
+### [Create an Active Page Link in Navbar](https://www.youtube.com/watch?v=uFSu6tgYKRY)
+- `" text-primary-900"` 必ず `text-primary-900` の前に空白が必要
+```
+className={({ isActive }) => {
+  return (
+    "hover:text-primary-900 active:text-primary-900 focus:text-primary-900" +
+    (isActive ? " text-primary-900" : {})
+  );
+}}
+```
+
 # [Scroll Restoration](https://v5.reactrouter.com/web/guides/scroll-restoration)
   - `react-router-dom` didn't have a function each header navigation link to scroll top
   - `react-router-dom`を使うとヘッダーナビゲーションからのリンクは、ページ遷移しても中身だけ入れ替わるので、ページの先頭から表示されない

@@ -86,15 +86,15 @@ const App = () => {
 	return (
 		<>
 			<ScrollToTop />
-			<div class="bg-white lg:pb-4">
-				<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+			<div className="bg-white lg:pb-4">
+				<div className="mx-auto max-w-screen-2xl px-4 md:px-8">
 					{/* text - start */}
-					<div class="mb-4 md:mt-10">
+					<div className="mb-4 md:mt-10">
 						{/* logo - start */}
-						<div class="text-center">
+						<div className="text-center">
 							<Link
 								to="/"
-								class="inline-flex justify-center items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
+								className="inline-flex justify-center items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
 								aria-label="mindfulseeds.ca"
 							>
 								<img
@@ -139,13 +139,23 @@ const App = () => {
 					<PopoverGroup className="hidden lg:flex lg:gap-x-12 ">
 						<NavLink
 							to="/"
-							className="text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
+							className={({ isActive }) => {
+								return (
+									"text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4" +
+									(isActive ? " bg-secondary-200" : {})
+								);
+							}}
 						>
 							Home
 						</NavLink>
 						<NavLink
 							to="/about-us"
-							className="text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
+							className={({ isActive }) => {
+								return (
+									"text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4" +
+									(isActive ? " bg-secondary-200" : {})
+								);
+							}}
 						>
 							About Us
 						</NavLink>
@@ -176,7 +186,13 @@ const App = () => {
 												<div className="flex-auto">
 													<NavLink
 														to={item.href}
-														className="block font-semibold text-gray-900 p-4 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
+														// className="block font-semibold text-gray-900 p-4 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
+														className={({ isActive }) => {
+															return (
+																"block font-semibold text-gray-900 p-4 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200" +
+																(isActive ? " bg-secondary-200" : {})
+															);
+														}}
 													>
 														{item.name}
 														<span className="absolute inset-0" />
@@ -196,7 +212,12 @@ const App = () => {
 							</NavLink> */}
 						<NavLink
 							to="contact"
-							className="text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
+							className={({ isActive }) => {
+								return (
+									"text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4" +
+									(isActive ? " bg-secondary-200" : {})
+								);
+							}}
 						>
 							Contact
 						</NavLink>
@@ -283,8 +304,8 @@ const App = () => {
 				</Dialog>
 			</header>
 			{/* Navigation - end */}
-			<div class="bg-white">
-				<div class="mx-auto max-w-screen-2xl">
+			<div className="bg-white">
+				<div className="mx-auto max-w-screen-2xl">
 					<Routes>
 						<Route path="/" element={<Home />}></Route>
 						<Route path="/about-us" element={<AboutUs />}></Route>
@@ -343,15 +364,15 @@ const App = () => {
 				</div>
 			</div>
 
-			<div class="bg-[#fff1df]">
-				<footer class="mx-auto max-w-screen-2xl px-4 md:px-8">
-					<div class="mb-4 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
-						<div class="col-span-full lg:col-span-2">
+			<div className="bg-[#fff1df]">
+				<footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
+					<div className="mb-4 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
+						<div className="col-span-full lg:col-span-2">
 							{/* logo - start */}
-							<div class="mb-4 lg:-mt-2">
+							<div className="mb-4 lg:-mt-2">
 								<Link
 									to="/"
-									class="inline-flex items-center gap-2 text-xl font-bold text-gray-100 md:text-2xl"
+									className="inline-flex items-center gap-2 text-xl font-bold text-gray-100 md:text-2xl"
 									aria-label="mindfulseeds.ca"
 								>
 									<img
@@ -363,51 +384,76 @@ const App = () => {
 							</div>
 							{/* logo - end */}
 
-							{/* <p class="mb-6 text-gray-400 sm:pr-8">
+							{/* <p className="mb-6 text-gray-400 sm:pr-8">
 								Filler text is dummy text which has no meaning however looks
 								very similar to real text.
 							</p> */}
 						</div>
 					</div>
 
-					<div class="border-t border-gray-300 py-8 text-left text-lg text-gray-400">
-						<div class="flex flex-col items-center justify-between gap-4  md:flex-row">
+					<div className="border-t border-gray-300 py-8 text-left text-lg text-gray-400">
+						<div className="flex flex-col items-center justify-between gap-4  md:flex-row">
 							{/* logo - start */}
-							<div class="flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
+							<div className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
 								Mindful Seeds © {new Date().getFullYear()}.{" "}
-								<NavLink to="/">mindfulseeds.ca</NavLink>
+								<Link to="/">mindfulseeds.ca</Link>
 							</div>
 							{/* logo - end */}
 
 							{/* nav - start */}
-							<nav class="flex gap-4">
+							<nav className="flex gap-4">
 								<NavLink
 									to="/"
-									class="font-semibold text-gray-500 transition duration-100 hover:text-gray-900 active:text-gray-900 focus:text-gray-900"
+									className={({ isActive }) => {
+										return (
+											"font-semibold text-gray-500 transition duration-100 hover:text-primary-900 active:text-primary-900 focus:text-primary-900" +
+											(isActive ? " text-primary-900" : {})
+										);
+									}}
 								>
 									Home
 								</NavLink>
 								<NavLink
 									to="/about-us"
-									class="font-semibold text-gray-500 transition duration-100 hover:text-gray-900 active:text-gray-900 focus:text-gray-900"
+									className={({ isActive }) => {
+										return (
+											"font-semibold text-gray-500 transition duration-100 hover:text-primary-900 active:text-primary-900 focus:text-primary-900" +
+											(isActive ? " text-primary-900" : {})
+										);
+									}}
 								>
 									About Us
 								</NavLink>
 								<NavLink
 									to="/services"
-									class="font-semibold text-gray-500 transition duration-100 hover:text-gray-900 active:text-gray-900 focus:text-gray-900"
+									className={({ isActive }) => {
+										return (
+											"font-semibold text-gray-500 transition duration-100 hover:text-primary-900 active:text-primary-900 focus:text-primary-900" +
+											(isActive ? " text-primary-900" : {})
+										);
+									}}
 								>
 									Services
 								</NavLink>
 								{/* <NavLink
-										to="/careers"
-										class="font-semibold text-gray-500 transition duration-100 hover:text-gray-900 active:text-gray-900 focus:text-gray-900"
-									>
-										Careers
-									</NavLink> */}
+									to="/careers"
+									className={({ isActive }) => {
+										return (
+											"font-semibold text-gray-500 transition duration-100 hover:text-primary-900 active:text-primary-900 focus:text-primary-900" +
+											(isActive ? " text-primary-900" : {})
+										);
+									}}
+								>
+									Careers
+								</NavLink> */}
 								<NavLink
 									to="/contact"
-									class="font-semibold text-gray-500 transition duration-100 hover:text-gray-900 active:text-gray-900 focus:text-gray-900 focus:text-secondary-600"
+									className={({ isActive }) => {
+										return (
+											"font-semibold text-gray-500 transition duration-100 hover:text-primary-900 active:text-primary-900 focus:text-primary-900" +
+											(isActive ? " text-primary-900" : {})
+										);
+									}}
 								>
 									Contact
 								</NavLink>
