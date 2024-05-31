@@ -28,36 +28,36 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import ContactUs from "./pages/ContactUs";
 
-const products = [
-	{
-		name: "Behavioural Consultation Services",
-		href: "/behavioural-consultation-services",
-	},
-	{
-		name: "In-home Behavioural Intervention Services",
-		href: "/in-home-behavioural-intervention-services",
-	},
-	{
-		name: "Emotional Awareness and Regulation Program",
-		href: "/emotional-awareness-and-regulation-program",
-	},
-	{
-		name: "Workshop Training",
-		href: "/workshop-training",
-	},
-	{
-		name: "Social Skills Training",
-		href: "/social-skills-training",
-	},
-	{
-		name: "Parent and Caregiver Training",
-		href: "/parent-and-caregiver-training",
-	},
-	{
-		name: "1-1 ABA In-home Therapy",
-		href: "/1-1-aba-in-home-therapy",
-	},
-];
+// const products = [
+// 	{
+// 		name: "Behavioural Consultation Services",
+// 		href: "/behavioural-consultation-services",
+// 	},
+// 	{
+// 		name: "In-home Behavioural Intervention Services",
+// 		href: "/in-home-behavioural-intervention-services",
+// 	},
+// 	{
+// 		name: "Emotional Awareness and Regulation Program",
+// 		href: "/emotional-awareness-and-regulation-program",
+// 	},
+// 	{
+// 		name: "Workshop Training",
+// 		href: "/workshop-training",
+// 	},
+// 	{
+// 		name: "Social Skills Training",
+// 		href: "/social-skills-training",
+// 	},
+// 	{
+// 		name: "Parent and Caregiver Training",
+// 		href: "/parent-and-caregiver-training",
+// 	},
+// 	{
+// 		name: "1-1 ABA In-home Therapy",
+// 		href: "/1-1-aba-in-home-therapy",
+// 	},
+// ];
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
@@ -178,28 +178,37 @@ const App = () => {
 							>
 								<PopoverPanel className="absolute -left-8 top-full z-10 w-screen max-w-md overflow-hidden bg-white shadow-lg ring-1 ring-gray-900/5">
 									<div>
-										{products.map((item) => (
-											<div
-												key={item.name}
-												className="group relative flex items-center gap-x-6 text-sm leading-6"
-											>
-												<div className="flex-auto">
-													<NavLink
-														to={item.href}
-														// className="block font-semibold text-gray-900 p-4 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
-														className={({ isActive }) => {
-															return (
-																"block font-semibold text-gray-900 p-4 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200" +
-																(isActive ? " bg-secondary-200" : {})
-															);
-														}}
-													>
-														{item.name}
-														<span className="absolute inset-0" />
-													</NavLink>
+										{posts
+											.filter(
+												(item) => ![206, 218, 219, 122, 78].includes(item.id)
+											)
+											.map((item, index) => (
+												<div
+													key={index}
+													className="group relative flex items-center gap-x-6 text-sm leading-6"
+												>
+													<div className="flex-auto">
+														<NavLink
+															to={
+																"/" +
+																item.title.rendered
+																	.toLowerCase()
+																	.replace(/\s+/g, "-")
+															}
+															// className="block font-semibold text-gray-900 p-4 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
+															className={({ isActive }) => {
+																return (
+																	"block font-semibold text-gray-900 p-4 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200" +
+																	(isActive ? " bg-secondary-200" : {})
+																);
+															}}
+														>
+															{item.title.rendered}
+															<span className="absolute inset-0" />
+														</NavLink>
+													</div>
 												</div>
-											</div>
-										))}
+											))}
 									</div>
 								</PopoverPanel>
 							</Transition>
@@ -277,16 +286,26 @@ const App = () => {
 													/>
 												</DisclosureButton>
 												<DisclosurePanel className="mt-2 space-y-2">
-													{[...products].map((item) => (
-														<NavLink
-															key={item.name}
-															as="a"
-															to={item.href}
-															className="block rounded-lg py-2 pl-6 pr-3 text-lg font-semibold leading-7 text-gray-900 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
-														>
-															{item.name}
-														</NavLink>
-													))}
+													{[...posts]
+														.filter(
+															(item) =>
+																![206, 218, 219, 122, 78].includes(item.id)
+														)
+														.map((item, index) => (
+															<NavLink
+																key={index}
+																as="a"
+																to={
+																	"/" +
+																	item.title.rendered
+																		.toLowerCase()
+																		.replace(/\s+/g, "-")
+																}
+																className="block rounded-lg py-2 pl-6 pr-3 text-lg font-semibold leading-7 text-gray-900 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
+															>
+																{item.title.rendered}
+															</NavLink>
+														))}
 												</DisclosurePanel>
 											</>
 										)}
@@ -313,47 +332,65 @@ const App = () => {
 						{posts.map((item, index) =>
 							item.id === 122 ? (
 								<Route
-									path={`/careers`}
+									path={
+										"/" + item.title.rendered.toLowerCase().replace(/\s+/g, "-")
+									}
 									element={<Blog key={index} post={item} />}
 								/>
 							) : item.id === 78 ? (
 								<Route
-									path={`/contact`}
+									path={
+										"/" + item.title.rendered.toLowerCase().replace(/\s+/g, "-")
+									}
 									element={<ContactUs key={index} post={item} />}
 								/>
 							) : item.id === 227 ? (
 								<Route
-									path={`/behavioural-consultation-services`}
+									path={
+										"/" + item.title.rendered.toLowerCase().replace(/\s+/g, "-")
+									}
 									element={<Blog key={index} post={item} />}
 								/>
 							) : item.id === 229 ? (
 								<Route
-									path={`/in-home-behavioural-intervention-services`}
+									path={
+										"/" + item.title.rendered.toLowerCase().replace(/\s+/g, "-")
+									}
 									element={<Blog key={index} post={item} />}
 								/>
 							) : item.id === 231 ? (
 								<Route
-									path={`/emotional-awareness-and-regulation-program`}
+									path={
+										"/" + item.title.rendered.toLowerCase().replace(/\s+/g, "-")
+									}
 									element={<Blog key={index} post={item} />}
 								/>
 							) : item.id === 233 ? (
 								<Route
-									path={`/workshop-training`}
+									path={
+										"/" + item.title.rendered.toLowerCase().replace(/\s+/g, "-")
+									}
 									element={<Blog key={index} post={item} />}
 								/>
 							) : item.id === 77 ? (
 								<Route
-									path={`/social-skills-training`}
+									path={
+										"/" + item.title.rendered.toLowerCase().replace(/\s+/g, "-")
+									}
 									element={<Blog key={index} post={item} />}
 								/>
 							) : item.id === 76 ? (
 								<Route
-									path={`/parent-and-caregiver-training`}
+									path={
+										"/" + item.title.rendered.toLowerCase().replace(/\s+/g, "-")
+									}
 									element={<Blog key={index} post={item} />}
 								/>
 							) : item.id === 75 ? (
 								<Route
-									path={`/1-1-aba-in-home-therapy`}
+									path={
+										"/" + item.title.rendered.toLowerCase().replace(/\s+/g, "-")
+									}
 									element={<Blog key={index} post={item} />}
 								/>
 							) : (
@@ -390,7 +427,6 @@ const App = () => {
 							</p> */}
 						</div>
 					</div>
-
 					<div className="border-t border-gray-300 py-8 text-left text-lg text-gray-400">
 						<div className="flex flex-col items-center justify-between gap-4  md:flex-row">
 							{/* logo - start */}

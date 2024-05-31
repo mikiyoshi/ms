@@ -658,6 +658,9 @@ video {
 .h-11{
   height: 2.75rem;
 }
+.h-56{
+  height: 14rem;
+}
 .min-h-96{
   min-height: 24rem;
 }
@@ -819,6 +822,9 @@ video {
 }
 .divide-gray-900\/5 > :not([hidden]) ~ :not([hidden]){
   border-color: rgb(17 24 39 / 0.05);
+}
+.self-start{
+  align-self: flex-start;
 }
 .overflow-hidden{
   overflow: hidden;
@@ -1342,6 +1348,15 @@ video {
   --tw-text-opacity: 1;
   color: rgb(92 184 92 / var(--tw-text-opacity));
 }
+.active\:text-indigo-600:active{
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
+}
+.group:hover .group-hover\:scale-110{
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .group:hover .group-hover\:bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1383,6 +1398,9 @@ video {
   }
   .sm\:gap-10{
     gap: 2.5rem;
+  }
+  .sm\:gap-12{
+    gap: 3rem;
   }
   .sm\:gap-y-8{
     row-gap: 2rem;
@@ -1492,11 +1510,17 @@ video {
   .md\:h-14{
     height: 3.5rem;
   }
+  .md\:h-24{
+    height: 6rem;
+  }
   .md\:w-32{
     width: 8rem;
   }
   .md\:w-14{
     width: 3.5rem;
+  }
+  .md\:w-24{
+    width: 6rem;
   }
   .md\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1611,6 +1635,9 @@ video {
   .lg\:h-auto{
     height: auto;
   }
+  .lg\:h-40{
+    height: 10rem;
+  }
   .lg\:w-4\/5{
     width: 80%;
   }
@@ -1623,6 +1650,9 @@ video {
   .lg\:w-3\/5{
     width: 60%;
   }
+  .lg\:w-40{
+    width: 10rem;
+  }
   .lg\:flex-1{
     flex: 1 1 0%;
   }
@@ -1634,6 +1664,9 @@ video {
   }
   .lg\:grid-cols-1{
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .lg\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .lg\:flex-row{
     flex-direction: row;
@@ -1649,6 +1682,9 @@ video {
   }
   .lg\:gap-12{
     gap: 3rem;
+  }
+  .lg\:gap-6{
+    gap: 1.5rem;
   }
   .lg\:gap-x-12{
     column-gap: 3rem;

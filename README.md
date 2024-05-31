@@ -72,6 +72,16 @@ module.exports = {
     }
 ```
 
+# [Layout Container](https://tailwindcss.com/docs/container)
+| Class  | Breakpoint | Properties |
+| ------------- | ------------- | ------------- |
+| container  | None | width: 100%; |
+| | sm (640px) |	max-width: 640px; |
+| | md (768px) |	max-width: 768px; |
+| | lg (1024px) |	max-width: 1024px; |
+| | xl (1280px) |	max-width: 1280px; |
+| | 2xl (1536px) |	max-width: 1536px; |
+
 # [Tailwind UI Using React](https://tailwindui.com/documentation#using-react)
 - `npm install @headlessui/react @heroicons/react`
 
