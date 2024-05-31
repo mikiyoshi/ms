@@ -40,7 +40,7 @@ export default function AboutUs() {
 									About Us
 								</h1>
 
-								<p class="mb-6 text-gray-500 sm:text-2xl md:mb-8 font-protest-riot-regular">
+								<p class="mb-6 text-gray-500 sm:text-2xl md:mb-8">
 									Mindful Seeds' mission is to provide a nurturing space where
 									evidence-based methods of teaching and support are used to
 									maximize an individual's capacity for learning. Inspired and
@@ -81,7 +81,7 @@ export default function AboutUs() {
 							</div>
 
 							<div class="md:pt-8">
-								<p class="mb-6 text-gray-500 sm:text-2xl md:mb-8 font-protest-riot-regular">
+								<p class="mb-6 text-gray-500 sm:text-2xl md:mb-8">
 									Recognizing the role of their significant others in their
 									development, Mindful Seeds also aims to promote parent and
 									caregiver's welfare by empowering them with culturally

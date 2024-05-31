@@ -6,6 +6,7 @@ module.exports = {
 			fontFamily: {
 				"protest-riot-regular": ["Protest Riot", "sans-serif"],
 				"patrick-hand-regular": ["Patrick Hand", "cursive"],
+				montserrat: ["Montserrat", "sans-serif"],
 			},
 			colors: {
 				primary: {

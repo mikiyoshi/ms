@@ -91,7 +91,7 @@ export default function Home() {
 							Nurturing Behaviour Grouth
 						</h1>
 
-						<p class="mb-4 font-semibold text-slate-500 md:mb-6 md:text-lg xl:text-xl font-protest-riot-regular">
+						<p class="mb-4 font-semibold text-slate-500 md:mb-6 md:text-lg xl:text-xl">
 							Mindful Seeds Inc. provides behaviour therapy services to
 							individuals with developmental disabilities and special needs,
 							including family-centered coaching to caregivers, and behavioural

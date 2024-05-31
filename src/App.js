@@ -84,7 +84,7 @@ const App = () => {
 	}, []);
 
 	return (
-		<>
+		<div className="font-montserrat">
 			<ScrollToTop />
 			<div className="bg-white lg:pb-4">
 				<div className="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -499,7 +499,7 @@ const App = () => {
 					</div>
 				</footer>
 			</div>
-		</>
+		</div>
 	);
 };
 
