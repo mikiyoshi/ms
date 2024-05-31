@@ -89,7 +89,7 @@ const App = () => {
 			<div className="bg-white lg:pb-4">
 				<div className="mx-auto max-w-screen-2xl px-4 md:px-8">
 					{/* text - start */}
-					<div className="mb-4 md:mt-10">
+					<div className="mb-4 mt-4 md:mt-10">
 						{/* logo - start */}
 						<div className="text-center">
 							<Link
@@ -129,7 +129,7 @@ const App = () => {
 					<div className="flex lg:hidden">
 						<button
 							type="button"
-							className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+							className="-m-2.5 inline-flex items-center justify-center rounded-md p-4 text-gray-700"
 							onClick={() => setMobileMenuOpen(true)}
 						>
 							<span className="sr-only">Open main menu</span>

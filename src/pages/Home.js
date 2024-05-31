@@ -87,7 +87,7 @@ export default function Home() {
 				<section class="mb-8 flex flex-col justify-between gap-6 sm:gap-10 md:mb-16 md:gap-16 lg:flex-row">
 					{/* content - start */}
 					<div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12">
-						<h1 class="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-4xl">
+						<h1 class="mt-8 mb-8 text-4xl font-bold text-black sm:text-5xl md:mt-0  md:mb-12 md:text-4xl">
 							Nurturing Behaviour Grouth
 						</h1>
 
