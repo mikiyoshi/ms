@@ -1,5 +1,44 @@
 import React from "react";
 
+const products = [
+	{
+		category: "Servicers",
+		name: "Behavioural Consultation Services",
+	},
+	{
+		category: "Servicers",
+		name: "In-home Behavioural Intervention Services",
+	},
+	{
+		category: "Servicers",
+		name: "Emotional Awareness and Regulation Program",
+	},
+	{
+		category: "Servicers",
+		name: "Workshop Training",
+	},
+	{
+		category: "Servicers",
+		name: "Social Skills Training",
+	},
+	{
+		category: "Servicers",
+		name: "Parent and Caregiver Training",
+	},
+	{
+		category: "Servicers",
+		name: "1-1 ABA In-home Therapy",
+	},
+	{
+		category: "Employment",
+		name: "",
+	},
+	{
+		category: "Other",
+		name: "",
+	},
+];
+
 const ContactForm = () => {
 	return (
 		<>
@@ -24,7 +63,7 @@ const ContactForm = () => {
 							</label>
 							<input
 								name="your-name"
-								class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+								class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary-300 transition duration-100 focus:ring"
 								placeholder="Your Full Name"
 							/>
 						</div>
@@ -38,7 +77,7 @@ const ContactForm = () => {
 							</label>
 							<input
 								name="email"
-								class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+								class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary-300 transition duration-100 focus:ring"
 								placeholder="yourmail@example.com"
 							/>
 						</div>
@@ -50,11 +89,19 @@ const ContactForm = () => {
 							>
 								Subject * (required)
 							</label>
-							<input
-								name="subject"
-								class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-								placeholder="Subject"
-							/>
+							<div className="mt-2">
+								<select
+									name="subject"
+									autoComplete="country-name"
+									className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary-300 transition duration-100 focus:ring"
+								>
+									{[...products].map((item) => (
+										<option>
+											{item.category} {item.name}
+										</option>
+									))}
+								</select>
+							</div>
 						</div>
 
 						<div class="sm:col-span-2">
@@ -66,13 +113,13 @@ const ContactForm = () => {
 							</label>
 							<textarea
 								name="message"
-								class="h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+								class="h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary-300 transition duration-100 focus:ring"
 								placeholder="Your Message"
 							></textarea>
 						</div>
 
 						<div class="flex items-center justify-between sm:col-span-2">
-							<button class="inline-block rounded-lg bg-primary-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base">
+							<button class="inline-block rounded-lg bg-primary-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base">
 								Submit
 							</button>
 
