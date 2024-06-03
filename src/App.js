@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 // React Router
-import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import axios from "axios";
 import Blog from "./components/Blog";
