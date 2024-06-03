@@ -66,12 +66,12 @@ export default function Sidebar() {
 											</Link>
 										</h2>
 
-										<p
+										<div
 											className="text-gray-500 line-clamp-3"
 											dangerouslySetInnerHTML={{
 												__html: item.content.rendered,
 											}}
-										></p>
+										></div>
 
 										<div>
 											<Link

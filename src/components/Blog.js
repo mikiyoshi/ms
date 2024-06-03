@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState, useCallback } from "react";
 import "./blog.css";
 import ContactForm from "./ContactForm";
+import Sidebar from "./Sidebar";
 
 export default function Blog({ post }) {
 	console.log(post);
@@ -54,6 +55,7 @@ export default function Blog({ post }) {
 						className="blog-excerpt"
 						dangerouslySetInnerHTML={{ __html: post.content.rendered }}
 					></div>
+					<Sidebar />
 					<ContactForm />
 				</div>
 			</div>

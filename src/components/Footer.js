@@ -23,7 +23,7 @@ const Footer = () => {
 	return (
 		<div className="bg-[#fff1df]">
 			<footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
-				<div className="mb-4 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
+				<div className="mb-4 grid grid-cols-3 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
 					<div className="col-span-full lg:col-span-2">
 						{/* logo - start */}
 						<div className="mb-4 lg:-mt-2">
@@ -44,10 +44,10 @@ const Footer = () => {
 
 					{[...contacts].map((item) => (
 						<>
-							<div className="lg:col-span-2">
+							<div className="col-span-full lg:col-span-2">
 								{/* Contact Email start */}
 								<div className="flex gap-4 md:gap-6">
-									<div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-primary-500 text-white shadow-lg md:h-10 md:w-10 md:rounded-xl">
+									<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-500 text-white shadow-lg md:h-10 md:w-10 md:rounded-xl">
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
 											fill="none"
@@ -81,7 +81,7 @@ const Footer = () => {
 								{/* Contact Email End */}
 							</div>
 
-							<div className="lg:col-span-2">
+							<div className="col-span-full lg:col-span-2">
 								{/* Contact Phone Start */}
 								<div className="flex gap-4 md:gap-6">
 									<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-500 text-white shadow-lg md:h-10 md:w-10 md:rounded-xl">

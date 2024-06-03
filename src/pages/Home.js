@@ -26,7 +26,7 @@ const products = [
 		contents: `Using principles of Applied Behaviour Analysis (ABA), Mindful Seeds' provides behavioural consultation which may include staff and or parent coaching and training to address client's goals and unique needs. Conducted by either Supervising Therapist or Clinical Supervisor, behavioural consultation services include conducting behavioural assessment, designing, and implementing individualized, behavioural intervention plan, and parent training and support. Some common skills addressed during consultation are, building and following routines, independent daily skills, parent-child interaction, functional communication training, behaviour management techniques, or a specific goal that is important to the client. Behavioural consultation services can be delivered in person or virtual via Zoom and are typically one (1) hour in length, twice a week during an agreed convenient time. Behavioural consultation generally runs between 6 – 12 weeks, and duration can be negotiated based on needs.
     Clinical Team: Clinical Supervisor or Supervising Therapist *** pricing to follow
     `,
-		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/boy_drawing_and_coloring_on_paper_on_floor-scopio-53792f94-9151-41ea-8898-58544985c07d.jpg",
+		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/boy_drawing_and_coloring_on_paper_on_floor-scopio-53792f94-9151-41ea-8898-58544985c07d-400x200.jpg",
 	},
 	{
 		category: "Servicers",
@@ -35,7 +35,7 @@ const products = [
 		contents: `Individualized behavioural intervention is designed to support learning for early learners and teens to further enhance their skills across a variety of learning domains such as, but not limited to, communication and interpersonal skills, play, self-regulation, and self-management skills. Under the guidance of a clinical supervisor and direct supervision of supervising therapist, these skills are taught using one to one instruction by an ABA therapist. Parental or caregiver treatment participation may be required when determined necessary. Service is ideally delivered in person in client's home environment, and virtual service can also be an option to accommodate special circumstances. One-to-one instructions are typically two (2) hours in length, twice a week during an agreed convenient time. Length of service is based on client's needs and goals.
     Clinical Team: Clinical Supervisor, Supervising Therapist, and ABA Therapist
     `,
-		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2022/11/kids36.jpg",
+		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2022/11/kids36-400x200.jpg",
 	},
 	{
 		category: "Servicers",
@@ -45,7 +45,7 @@ const products = [
     identify and label emotions and are taught self-help strategies to handle strong and complex emotions such as anger, feeling anxious, sad, excitement, and happy. Program also includes training mind and body awareness techniques such as deep breathing and observing thoughts and feelings. To help identify client's needs, parents will be involved in the first two (2), behavioural assessment sessions, and will continue to participate in the last two (2) sessions to prepare them to maintain program strategies. Service can be delivered in person or virtual via Zoom and are typically two (2) hours in length, once a week, over 12 weeks during an agreed convenient time. Length of service is based on client's needs and goals.
     Clinical Team: Supervising Therapist and ABA Therapist
     `,
-		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/boy_printing_window_glass_with_yellow_paint-scopio-5de27a6b-bb8e-4836-8a79-e036580ce3d8.jpg",
+		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/boy_printing_window_glass_with_yellow_paint-scopio-5de27a6b-bb8e-4836-8a79-e036580ce3d8-400x200.jpg",
 	},
 	{
 		category: "Servicers",
@@ -55,28 +55,28 @@ const products = [
     Workshops generally runs between two (2) hours in length and can be conducted in person or virtual.
     Training Team: Clinical Supervisor and or Supervising Therapist
     `,
-		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-cfbd8731-6e9b-4aa1-9cec-5b8658909237.jpg",
+		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-cfbd8731-6e9b-4aa1-9cec-5b8658909237-400x200.jpg",
 	},
 	{
 		category: "Servicers",
 		name: "Social Skills Training",
 		href: "/social-skills-training",
 		contents: `To facilitate social inclusion and community participation, clients will learn social skills such as taking turns, initiating, and responding to conversations, waiting, etc., in individual and or group format.`,
-		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-c387117f-1e6d-43a6-9d59-f6ce03dc7f37.jpg",
+		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-c387117f-1e6d-43a6-9d59-f6ce03dc7f37-400x200.jpg",
 	},
 	{
 		category: "Servicers",
 		name: "Parent and Caregiver Training",
 		href: "/parent-and-caregiver-training",
 		contents: `To help promote client's learning and success, a behaviourally based, family-centered training and support for client's parents and caregivers.`,
-		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-08a15cd2-55d2-4576-99cb-14525a396649.jpeg",
+		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-08a15cd2-55d2-4576-99cb-14525a396649-400x200.jpeg",
 	},
 	{
 		category: "Servicers",
 		name: "1-1 ABA In-home Therapy",
 		href: "/1-1-aba-in-home-therapy",
 		contents: `Using evidence-based behavioural strategies, clients receive intensive 1-1 learning sessions with a dedicated ABA therapist in their home.`,
-		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-78da4c1b-241b-4411-be3f-d8af22e794e3.jpg",
+		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/scopio-78da4c1b-241b-4411-be3f-d8af22e794e3-400x200.jpg",
 	},
 ];
 
@@ -84,9 +84,9 @@ export default function Home() {
 	return (
 		<>
 			<div className="bg-white px-4 md:px-8 pb-6 sm:pb-8 lg:py-12">
-				<section class="mb-8 flex flex-col justify-between gap-6 sm:gap-10 md:mb-16 md:gap-16 lg:flex-row">
+				<section class="mb-16 grid md:grid-cols-2 gap-4">
 					{/* content - start */}
-					<div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12">
+					<div>
 						<h1 class="mt-8 mb-8 text-4xl font-bold text-black sm:text-5xl md:mt-0  md:mb-12 md:text-4xl">
 							Nurturing Behaviour Grouth
 						</h1>
@@ -120,7 +120,7 @@ export default function Home() {
 						}}
 						navigation={false}
 						modules={[Autoplay, Navigation]}
-						className="mySwiper h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-96 lg:w-5/12 xl:w-5/12"
+						className="mySwiper overflow-hidden rounded-lg bg-gray-100 shadow-lg"
 					>
 						<SwiperSlide className="swiper-w">
 							{/* image - start */}
@@ -154,7 +154,7 @@ export default function Home() {
 						</SwiperSlide>
 					</Swiper>
 				</section>
-				<div>
+				<div className="mb-16 relative">
 					<Swiper
 						spaceBetween={30}
 						centeredSlides={true}
@@ -165,14 +165,19 @@ export default function Home() {
 						pagination={{
 							clickable: true,
 						}}
-						navigation={true}
+						// navigation={true}
 						modules={[Autoplay, Navigation]}
+						navigation={{
+							prevEl: "#button_prev",
+							nextEl: "#button_next",
+						}}
 						className="mySwiper"
 					>
 						{[...products].map((item) => (
 							<SwiperSlide>
-								<section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row px-20">
-									<div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-6/12">
+								{/* <section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row px-20"> */}
+								<section class="grid md:grid-cols-2 gap-4">
+									<div className="h-auto overflow-hidden rounded-lg bg-gray-100 shadow-lg">
 										<img
 											src={item.img}
 											loading="lazy"
@@ -180,7 +185,7 @@ export default function Home() {
 											className="h-full w-full object-cover object-center"
 										/>
 									</div>
-									<div className="flex flex-col justify-center sm:text-center lg:text-left xl:w-6/12">
+									<div className="sm:text-center lg:text-left">
 										<p className="mb-4 font-semibold text-secondary-500 md:mb-6 md:text-lg xl:text-xl">
 											{item.category}
 										</p>
@@ -207,6 +212,44 @@ export default function Home() {
 							</SwiperSlide>
 						))}
 					</Swiper>
+					<div
+						id="button_prev"
+						className="relative inline-block rounded-full bg-primary-500 p-3 mt-8 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							strokeWidth={1.5}
+							stroke="currentColor"
+							className="size-6"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+							/>
+						</svg>
+					</div>
+					<div
+						id="button_next"
+						className="relative inline-block rounded-full bg-primary-500 p-3 md:mt-8 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							strokeWidth={1.5}
+							stroke="currentColor"
+							className="size-6"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+							/>
+						</svg>
+					</div>
 				</div>
 				<ContactForm />
 			</div>
