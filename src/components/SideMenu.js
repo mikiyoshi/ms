@@ -10,16 +10,16 @@ const categories = [
 		img: "http://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/girl_in_coloring_letter_a_with_red_on_kitchen_table-scopio-11a0e6d0-04ae-4a12-8788-ce48c1b5a343.jpg",
 	},
 	{
-		category: "About Us",
-		description: "",
-		href: "",
-		img: "https://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/boy_playing_play_dough-scopio-6eeab8aa-3a2d-4f08-9988-ddb71a0a044c-400x200.jpg",
-	},
-	{
 		category: "Services",
 		description: "",
 		href: "",
 		img: "https://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2022/12/kids61-400x200.jpg",
+	},
+	{
+		category: "About Us",
+		description: "",
+		href: "",
+		img: "https://mindfulseeds.torontosharehouse.com/wp/wp-content/uploads/2024/02/boy_playing_play_dough-scopio-6eeab8aa-3a2d-4f08-9988-ddb71a0a044c-400x200.jpg",
 	},
 	{
 		category: "Contact",

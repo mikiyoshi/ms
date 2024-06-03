@@ -159,17 +159,6 @@ const Footer = () => {
 								Home
 							</NavLink>
 							<NavLink
-								to="/about-us"
-								className={({ isActive }) => {
-									return (
-										"font-semibold text-gray-500 transition duration-100 hover:text-primary-900 active:text-primary-900 focus:text-primary-900" +
-										(isActive ? " text-primary-900" : {})
-									);
-								}}
-							>
-								About Us
-							</NavLink>
-							<NavLink
 								to="/services"
 								className={({ isActive }) => {
 									return (
@@ -179,6 +168,17 @@ const Footer = () => {
 								}}
 							>
 								Services
+							</NavLink>
+							<NavLink
+								to="/about-us"
+								className={({ isActive }) => {
+									return (
+										"font-semibold text-gray-500 transition duration-100 hover:text-primary-900 active:text-primary-900 focus:text-primary-900" +
+										(isActive ? " text-primary-900" : {})
+									);
+								}}
+							>
+								About Us
 							</NavLink>
 							{/* <NavLink
                 to="/careers"

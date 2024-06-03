@@ -107,17 +107,6 @@ const Header = () => {
 						>
 							Home
 						</NavLink>
-						<NavLink
-							to="/about-us"
-							className={({ isActive }) => {
-								return (
-									"text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4" +
-									(isActive ? " bg-secondary-200" : {})
-								);
-							}}
-						>
-							About Us
-						</NavLink>
 						<Popover className="relative">
 							<PopoverButton className="flex items-center gap-x-1 text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4">
 								Services
@@ -172,6 +161,17 @@ const Header = () => {
 								</PopoverPanel>
 							</Transition>
 						</Popover>
+						<NavLink
+							to="/about-us"
+							className={({ isActive }) => {
+								return (
+									"text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4" +
+									(isActive ? " bg-secondary-200" : {})
+								);
+							}}
+						>
+							About Us
+						</NavLink>
 						{/* <NavLink
 								to="/careers"
 								className="text-lg font-semibold leading-6 text-gray-900 border-slate-100 border-b-4 hover:border-secondary-500 hover:border-b-4 active:bg-secondary-200 focus:bg-secondary-200 focus:border-b-4 py-4 md:py-4 px-4 md:px-4"
@@ -225,12 +225,6 @@ const Header = () => {
 									>
 										Home
 									</NavLink>
-									<NavLink
-										to="/about-us"
-										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
-									>
-										About Us
-									</NavLink>
 									<Disclosure as="div" className="-mx-3">
 										{({ open }) => (
 											<>
@@ -269,6 +263,12 @@ const Header = () => {
 											</>
 										)}
 									</Disclosure>
+									<NavLink
+										to="/about-us"
+										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
+									>
+										About Us
+									</NavLink>
 									<NavLink
 										to="/contact"
 										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-secondary-500 active:bg-secondary-200 focus:bg-secondary-200"
